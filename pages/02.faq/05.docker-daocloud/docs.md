@@ -27,11 +27,11 @@ title: '与 Docker 和 DaoCloud 共舞'
 
 ![Ghost](http://blog.daocloud.io/wp-content/uploads/2015/08/ghost.png?resize=800)
 
-回忆一下在 Windows 98 年代被使用广泛的 Norton Ghost 软件（现在属于 Symantec 公司）。 Ghost 软件的作用是对可运行的系统环境做 clone（克隆），形成一个镜像（image），以便 Windows 98 崩溃以后能够从镜像中迅速恢复一个可用的系统环境。这解决了频繁重装 Windows 98 的麻烦，而且从镜像恢复比安装更节约时间。它有几种常见用法：
+回忆一下在 Windows 98 年代被使用广泛的 Norton Ghost 软件（现在属于 Symantec 公司）。Ghost 软件的作用是对可运行的系统环境做 clone（克隆），形成一个镜像（image），以便 Windows 98 崩溃以后能够从镜像中迅速恢复一个可用的系统环境。这解决了频繁重装 Windows 98 的麻烦，而且从镜像恢复比安装更节约时间。它有几种常见用法：
 
 - 操作系统（例如 Windows 98）安装好以后，对 C 盘（系统盘）做一个 clone；
 - 装完操作系统后再装些软件（例如输入法），然后对系统盘做 clone（假设输入法也装在系统盘里）；
-- 或者装完操作系统，再装完软件（比如 Photoshop ），然后对 Photoshop 做一些自己习惯的配置，最后再 clone。
+- 或者装完操作系统，再装完软件（比如 Photoshop），然后对 Photoshop 做一些自己习惯的配置，最后再 clone。
 
 显然，将更多的手工工作 clone 到 image 里，更能够节约多次安装的时间和人工劳动。
 
@@ -39,13 +39,13 @@ Docker 对这个模式进行了 Linux 和网络世界的完美实现，但是以
 
 我们都知道网络上运行着很多服务器，有 Web 服务器，有 DNS 服务器等等。如果我们需要自己建一个服务器，要经过许多步骤，就拿最常见的 Web 服务器来做个说明：
 
-1. 先要有服务器。服务器外形与我们家用的电脑（台式机和笔记本）不一样，但是里面的硬件是一样的—— CPU 、内存、主板、硬盘。只不过作为服务千万人的服务器，这些硬件性能比家用电脑好很多。或者，也可以用虚拟机，甚至是从云服务商那里买 VPS（ Virutual Private Server，云服务商提供的存在于网上的虚拟机）。
-2. 安装操作系统（ Linux 或 Windows Server 版）；
-3. 安装 Web 服务器软件（ Apache、Nginx 等）；
-4. 安装动态 Web 所需要的语言环境（ PHP、Ruby、Python等）和数据库（ MySQL 等）；
+1. 先要有服务器。服务器外形与我们家用的电脑（台式机和笔记本）不一样，但是里面的硬件是一样的—— CPU、内存、主板、硬盘。只不过作为服务千万人的服务器，这些硬件性能比家用电脑好很多。或者，也可以用虚拟机，甚至是从云服务商那里买 VPS（Virutual Private Server，云服务商提供的存在于网上的虚拟机）。
+2. 安装操作系统（Linux 或 Windows Server 版）；
+3. 安装 Web 服务器软件（Apache、Nginx 等）；
+4. 安装动态 Web 所需要的语言环境（PHP、Ruby、Python 等）和数据库（MySQL 等）；
 5. 有时为了快速开发还需要安装一些框架（比如 Python 的 django 等）；
-6. 部署代码到 Web 服务器软件指定目录下，有时我们需要代码的版本控制系统（ Subversion、Git 等），这个系统可以直接安装在服务器上（通常情况，对外提供服务的正式服务器——谓之「生产环境」是不能够装版本控制系统的，但是用来做开发用途的服务器——谓之「开发环境」可以这么干）；
-7. 安装配置后，还需要配置公网 IP 地址，买好域名并将 www.域名.com 指向这个 IP 。
+6. 部署代码到 Web 服务器软件指定目录下，有时我们需要代码的版本控制系统（Subversion、Git 等），这个系统可以直接安装在服务器上（通常情况，对外提供服务的正式服务器——谓之「生产环境」是不能够装版本控制系统的，但是用来做开发用途的服务器——谓之「开发环境」可以这么干）；
+7. 安装配置后，还需要配置公网 IP 地址，买好域名并将 www.域名.com 指向这个 IP。
 
 累吗？很累！但是还没完！
 
@@ -63,18 +63,18 @@ Docker 对这个模式进行了 Linux 和网络世界的完美实现，但是以
 
 Ghost 方式解决的是第一类和第三类的问题，并且第三类并没解决好（硬件驱动不同）。况且 Linux 体系的特性与 Windows 不同，因此没有类似 Norton Ghost 这样的软件。对于这三大痛点解决方案是：由于 Linux 系统有着可以网络安装的特性，操作系统和软件都放在服务器上，在安装不同软件环境的时候，使用相应的脚本来进行网络化自动安装，减少一些手工操作。以上这些，还没有涉及代码部署和把服务器连到网络上（上线）的自动化问题，这些步骤很多仍需要人工操作。
 
-虚拟技术出现以后，使用虚拟机能够更方便一点解决第三个痛点。在硬件服务器操作系统中安装虚拟化软件（例如 VMware ）生成虚拟机母平台，在虚拟机母平台上产生多个虚拟机（没装操作系统的），再在这些虚拟机中安装操作系统和软件环境。如果遇到上述那个经典问题——机器性能不够，需要把开发环境迁移到性能更好的机器上去，那么只需要将虚拟机迁移到更好硬件平台的虚拟机母平台上去并给虚拟机分配更多的资源。
+虚拟技术出现以后，使用虚拟机能够更方便一点解决第三个痛点。在硬件服务器操作系统中安装虚拟化软件（例如 VMware）生成虚拟机母平台，在虚拟机母平台上产生多个虚拟机（没装操作系统的），再在这些虚拟机中安装操作系统和软件环境。如果遇到上述那个经典问题——机器性能不够，需要把开发环境迁移到性能更好的机器上去，那么只需要将虚拟机迁移到更好硬件平台的虚拟机母平台上去并给虚拟机分配更多的资源。
 
 这个时代被我定义为「原始时代」，因为里面有大量的步骤是手工操作，类似于流水线生产还没有出现的原始手工时代。
 
 ## 解决原始时代的问题
 
-终于，一群聪明人实在受不了天天把时间耗费在无穷无尽的安装配置中。他们发明了 **Docker** 来解决这些问题。[Docker](http://www.docker.com) 用 **Docker image** （中文叫做 **Docker 镜像**）来代替原始时代的镜像（或光盘），用 **Dockerfile** 来取代自动安装脚本，用 **Docker node** 来代替虚拟机母平台，用 **Docker container（容器）** 来代替虚拟机。综合了原始时代那些工具的所有的优点使得 Linux 和网络实现了完全自动化。
+终于，一群聪明人实在受不了天天把时间耗费在无穷无尽的安装配置中。他们发明了 **Docker** 来解决这些问题。[Docker](http://www.docker.com) 用 **Docker image**（中文叫做 **Docker 镜像**）来代替原始时代的镜像（或光盘），用 **Dockerfile** 来取代自动安装脚本，用 **Docker node** 来代替虚拟机母平台，用 **Docker container（容器）**来代替虚拟机。综合了原始时代那些工具的所有的优点使得 Linux 和网络实现了完全自动化。
 
-- 镜像（或光盘）--> Docker image
-- 安装脚本 --> Dockerfile
-- 安装了虚拟机软件的服务器 --> Docker node
-- 虚拟机（未安装操作系统的）--> Docker container
+- 镜像（或光盘）--》Docker image
+- 安装脚本 --》Dockerfile
+- 安装了虚拟机软件的服务器 --》Docker node
+- 虚拟机（未安装操作系统的）--》Docker container
 
 ### Docker image 与 Dockerfile
 
@@ -90,15 +90,15 @@ Ghost 方式解决的是第一类和第三类的问题，并且第三类并没�
 
 Docker 术语体系中，每执行一条 Dockerfile 里的命令，叫做增加一个**「层」**，无论这个「层」干的活是安装还是删除。由于镜像具有不可直接修改的性质，如果想从源 Docker 镜像里删除某些软件后形成新的 Docker 镜像，那么就在 Dockerfile 里写入删除那些软件的语句，新构建生成的 Docker 镜像*运行起来*就没有那些软件了。由前述构建的实质可知：新 Docker 镜像本身不比源 Docker 镜像小。
 
-引用带来的好处是减少制作新 Docker 镜像所需要写在 Dockerfile 里的命令。举个例子：源镜像是 Linux 操作系统，那么可以引用它并制作出一个含有 Linux + Apache + PHP 的 Docker 镜像，现在就有了两个可以充当源镜像的 Docker 镜像。如果要制作标准的 LAMP (Linux + Apache + MySQL + PHP) Web 服务器的 Docker 镜像，只需要引用 Linux + Apache + PHP 这个源镜像，再在 Dockerfile 里添加一句「下载并安装 MySQL」（语法请参考 Dockerfile 相关文档，这里不多介绍），就成了。
+引用带来的好处是减少制作新 Docker 镜像所需要写在 Dockerfile 里的命令。举个例子：源镜像是 Linux 操作系统，那么可以引用它并制作出一个含有 Linux + Apache + PHP 的 Docker 镜像，现在就有了两个可以充当源镜像的 Docker 镜像。如果要制作标准的 LAMP （Linux + Apache + MySQL + PHP）Web 服务器的 Docker 镜像，只需要引用 Linux + Apache + PHP 这个源镜像，再在 Dockerfile 里添加一句「下载并安装 MySQL」（语法请参考 Dockerfile 相关文档，这里不多介绍），就成了。
 
 ![构建](http://blog.daocloud.io/wp-content/uploads/2015/08/build.png?resize=800)
 
 ### Docker node 与 Docker container
 
-Docker image 运行在 **container（容器）** 中。将 Docker image 调入容器运行的动作叫做**「部署」**，将指定的 Docker image 部署到指定的容器，并完成启动，就产生了一个**「服务」**。
+Docker image 运行在 **container（容器）**中。将 Docker image 调入容器运行的动作叫做**「部署」**，将指定的 Docker image 部署到指定的容器，并完成启动，就产生了一个**「服务」**。
 
-容器由 **Docker node** 提供。 Docker 体系中，**Docker 软件**（也就是很多文章里提到的下载、安装、配置的 Docker server ）是虚拟化软件（回想一下 VMware 软件）， Docker node 就是一个安装了 Docker 软件的硬件机器（或者不用硬件机器，而是用虚拟机或 VPS），从而成为了 Docker 虚拟机母平台， Docker 虚拟机就是容器（回想一下没有安装操作系统的 VMware 虚拟机）。通过操作 Docker 软件，可以在 Docker node 上创建多个容器。
+容器由 **Docker node** 提供。Docker 体系中，**Docker 软件**（也就是很多文章里提到的下载、安装、配置的 Docker server）是虚拟化软件（回想一下 VMware 软件），Docker node 就是一个安装了 Docker 软件的硬件机器（或者不用硬件机器，而是用虚拟机或 VPS），从而成为了 Docker 虚拟机母平台，Docker 虚拟机就是容器（回想一下没有安装操作系统的 VMware 虚拟机）。通过操作 Docker 软件，可以在 Docker node 上创建多个容器。
 
 ![容器](http://blog.daocloud.io/wp-content/uploads/2015/08/container.png?resize=800)
 
@@ -113,19 +113,19 @@ Docker 能够模拟「clone」的关键原因在于：容器与原始时代虚�
 - 提供 Docker node 和容器、IP 地址、域名以及相关的防火墙等网络基础上线平台；
 - 还有从 [GitHub](www.github.com) 和其他代码仓库下载我们编写的 Dockerfile 以及代码的能力。
 
-这相当于：Docker 镜像仓库、构建 Docker 镜像的服务器， Docker node 以及其上的容器，均可以布置在一个云服务商内部的局域网中。从而节省了下载源 Docker 镜像的时间、使用我们自己不够快的电脑制作 Docker 镜像的时间、配置 IP 和域名的时间、还节省了安装配置相关防火墙以及负载均衡等网络设施的时间（开发者更无须了解这些配置的细节）。只要将符合我们需求的 Dockerfile 以及程序源代码上传到已关联的 GitHub 仓库，在 DaoCloud 网站中构建新镜像并指定该 Dockerfile，然后部署、生成服务，即可实现服务器上线。
+这相当于：Docker 镜像仓库、构建 Docker 镜像的服务器，Docker node 以及其上的容器，均可以布置在一个云服务商内部的局域网中。从而节省了下载源 Docker 镜像的时间、使用我们自己不够快的电脑制作 Docker 镜像的时间、配置 IP 和域名的时间、还节省了安装配置相关防火墙以及负载均衡等网络设施的时间（开发者更无须了解这些配置的细节）。只要将符合我们需求的 Dockerfile 以及程序源代码上传到已关联的 GitHub 仓库，在 DaoCloud 网站中构建新镜像并指定该 Dockerfile，然后部署、生成服务，即可实现服务器上线。
 
-[DaoCloud](http://www.daocloud.io) 不仅提供了以上所说的那些功能，还可以管理不属于 DaoCloud 的 Docker node ，无论这个 Docker node 在哪里（可以在家里的树莓派上、台式电脑或笔记本里，也可以在 AWS 上），从而为分布式部署我们的 Web 应用服务器提供了方便。
+[DaoCloud](http://www.daocloud.io) 不仅提供了以上所说的那些功能，还可以管理不属于 DaoCloud 的 Docker node，无论这个 Docker node 在哪里（可以在家里的树莓派上、台式电脑或笔记本里，也可以在 AWS 上），从而为分布式部署我们的 Web 应用服务器提供了方便。
 
 ## 与 DaoCloud 共舞
 
-至此，Docker 和 DaoCloud 是什么以及能做什么，都已经介绍完毕。那么我们怎么利用这套系统呢？先去 [DaoCloud](http://www.daocloud.io) 注册一个帐户，个人设置中关联自己的 GitHub 帐号。在 [GitHub](http://www.github.com) 里新建一个仓库，存入 Dockerfile 文件。也可以在 [GitHub](http://www.github.com) 上找找别人的 Dockerfile，fork 到自己 [GitHub](http://www.github.com) 帐户下的仓库里。跟着 [DaoCloud](http://www.daocloud.io) 的 [入门手册](http://docs.daocloud.io) 和 [视频](http://7u2psl.com2.z0.glb.qiniucdn.com/daocloud_small.mp4) ，在 DaoCloud 控制面板里点击「构建」（选择自己 GitHub 里有 Dockerfile 的那个仓库）、「部署」，点完这几个按钮后，便能获取一个运行着的服务器。
+至此，Docker 和 DaoCloud 是什么以及能做什么，都已经介绍完毕。那么我们怎么利用这套系统呢？先去 [DaoCloud](http://www.daocloud.io) 注册一个帐户，个人设置中关联自己的 GitHub 帐号。在 [GitHub](http://www.github.com) 里新建一个仓库，存入 Dockerfile 文件。也可以在 [GitHub](http://www.github.com) 上找找别人的 Dockerfile，fork 到自己 [GitHub](http://www.github.com) 帐户下的仓库里。跟着 [DaoCloud](http://www.daocloud.io) 的 [入门手册](http://docs.daocloud.io) 和 [视频](http://7u2psl.com2.z0.glb.qiniucdn.com/daocloud_small.mp4)，在 DaoCloud 控制面板里点击「构建」（选择自己 GitHub 里有 Dockerfile 的那个仓库）、「部署」，点完这几个按钮后，便能获取一个运行着的服务器。
 
-可能有些人还想在开发环境运行起来以后登录进去，以便再做一些手工工作或者上传代码，那么找找编写 Dockerfile 的参考资料，里面会有介绍。其实呢，完全可以把自己的代码也放在 GitHub 用来存储 Dockerfile 的同一个仓库里，然后 Dockerfile 里写一句 `COPY ./ /tmp`，在 Docker 镜像部署到容器运行以后，这些代码在 /tmp 目录里。要是想把一个 index.html 放在 /www/html/ 中呢？ Dockerfile 里写成 `COPY ./ /www/html` 就可以了。
+可能有些人还想在开发环境运行起来以后登录进去，以便再做一些手工工作或者上传代码，那么找找编写 Dockerfile 的参考资料，里面会有介绍。其实呢，完全可以把自己的代码也放在 GitHub 用来存储 Dockerfile 的同一个仓库里，然后 Dockerfile 里写一句 `COPY ./ /tmp`，在 Docker 镜像部署到容器运行以后，这些代码在 、tmp 目录里。要是想把一个 index.html 放在 、www、html、中呢？Dockerfile 里写成 `COPY ./ /www/html` 就可以了。
 
 ## 注意事项
 
-- Docker 技术目前还不能运用于 Windows 体系，只运用于 Linux/Unix 体系。
+- Docker 技术目前还不能运用于 Windows 体系，只运用于 Linux、Unix 体系。
 - 在 DaoCloud 部署的服务器必须是 Web 服务（更新：DaoCloud 即将开始支持 TCP 等其他后台服务，请关注产品更新）。
 
 ## 尾声
