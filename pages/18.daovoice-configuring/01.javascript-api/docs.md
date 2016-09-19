@@ -12,13 +12,13 @@ title: 'JavaScript API'
 * 显示、隐藏消息窗口
 * 显示、隐藏方法钩子
 
-如果您的程序不是 JavaScript，可以使用我们的 [开放API](http://docs.daovoice.io/api/)
+如果您的程序不是 JavaScript，可以使用我们的 [开放 API](http://docs.daovoice.io/api/)
 
 
-#### 初始化JS Lib
+#### 初始化 JS Lib
 
 初始化 daovoice 组件设置
-当 DaoVoice 加载完成之后，您可以通过 daovoice('init') 方法来对 daovoice 初始化设置。
+当 DaoVoice 加载完成之后，您可以通过 daovoice「'init「)方法来对 daovoice 初始化设置。
 当用户信息加载完成，您可将用户信息字段添加到 DaoVoice。
 
 
@@ -54,7 +54,7 @@ daovoice('init', {
 
 #### 同步信息
 
-更新 DaoVoice 组件，当您调用 daovoice('update') 方法将会使 DaoVoice 组件与服务器同步消息，如果有未读消息将会将它展示出来。一般配合初始化使用。
+更新 DaoVoice 组件，当您调用 daovoice「'update「)方法将会使 DaoVoice 组件与服务器同步消息，如果有未读消息将会将它展示出来。一般配合初始化使用。
 
 例子：
 ```
@@ -66,7 +66,7 @@ daovoice('update')
 
 #### 更新用户属性
 
-如果您调用 update  方法时带上设置参数 (JSON object)， daovoice 组件将会更新用户属性信息，并向服务器发送更新信息、同步消息。
+如果您调用 update 方法时带上设置参数 （JSON object），daovoice 组件将会更新用户属性信息，并向服务器发送更新信息、同步消息。
 
 例子：
 
@@ -111,7 +111,7 @@ daovoice('openNewMessage', '我是打开时默认带上的内容')
 #### 发送事件
 
 
-您可以通过 trackEvent 方法来发送自定义事件，daovoice 将会把该事件与当前的用户联系在一起。您也可以在第三个参数的位置上添加事件的数据 （可选参数）
+您可以通过 trackEvent 方法来发送自定义事件，daovoice 将会把该事件与当前的用户联系在一起。您也可以在第三个参数的位置上添加事件的数据（可选参数）
 
 ```
 /**
@@ -137,7 +137,7 @@ daovoice('trackEvent', 'createOrder', {
 #### 显示消息窗口
 
 
-您可以通过show方法来打开消息列表。如果没有对话，它将打开新的消息视图，如果有它将打开消息列表。
+您可以通过 show 方法来打开消息列表。如果没有对话，它将打开新的消息视图，如果有它将打开消息列表。
 
 ```
 /**
@@ -149,7 +149,7 @@ daovoice('show')
 #### 隐藏消息窗口
 
 
-您可以通过hide方法来关闭消息窗口。
+您可以通过 hide 方法来关闭消息窗口。
 
 ```
 /**
@@ -161,7 +161,7 @@ daovoice('hide')
 #### 显示方法钩子
 
 
-您可以通过onShow方法来添加show方法执行之后的事件。需要传入一个函数参数。
+您可以通过 onShow 方法来添加 show 方法执行之后的事件。需要传入一个函数参数。
 
 ```
 /**
@@ -174,7 +174,7 @@ daovoice('onShow', function() { // 做一些事情})
 #### 隐藏方法钩子
 
 
-您可以通过onHide方法添加hide方法执行之后触发的事件。需要传入一个函数参数。
+您可以通过 onHide 方法添加 hide 方法执行之后触发的事件。需要传入一个函数参数。
 
 ```
 /**
@@ -187,9 +187,9 @@ daovoice('onHide', function() { // 做一些事情})
 ### 小建议
 
 
-* 检查您的接入网站是否加入<!DOCTYPE html>头文件
-* 检查您的接入网站是否加入utf-8的编码格式
-* 建议您的网站head标签内加入`<meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9; IE8; IE=7; IE=EDGE">`为了产品在IE浏览器上有更好的用户体验.
+* 检查您的接入网站是否加入「!DOCTYPE html》头文件
+* 检查您的接入网站是否加入 utf-8 的编码格式
+* 建议您的网站 head 标签内加入`<meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9; IE8; IE=7; IE=EDGE">`为了产品在 IE 浏览器上有更好的用户体验。
 
 
 ### 小技巧
