@@ -28,9 +28,9 @@ yo gulp-angular
 
 - 项目依赖 node bower gulp 
 - 调试命令 gulp serve
-- 调试发布命令 gulp serve:dist
+- 调试发布命令 gulp serve：dist
 - 构建命令 gulp build 
-- 构建目录 /dist
+- 构建目录 、dist
 - 构建出来的是纯静态文件
 
 该应用有个小问题，fonts 文件在 build 之后就不显示了，需要修改 `bower.json`。
@@ -58,7 +58,7 @@ yo gulp-angular
 
 ### Dockerfile 编写
 
-首先，选择官方的 node 镜像作为项目的基础镜像。一般采用 node:0.12.7-wheezy ，不会缺少各种各样的东西。
+首先，选择官方的 node 镜像作为项目的基础镜像。一般采用 node：0.12.7-wheezy，不会缺少各种各样的东西。
 
 ```
 FROM node:0.12.7-wheezy
@@ -168,7 +168,7 @@ RUN cp -R /app/dist/*  /usr/share/nginx/html
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-有了 Dockerfile 以后，我们可以运行下面的命令构建前端镜像并命名为 my-angular-app：
+有了 Dockerfile 以后，我们可以运行下面的命令构建前端镜像并命名为 my-angular-App：
 
 ```bash
 docker build -t my-angular-app .
