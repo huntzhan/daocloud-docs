@@ -9,7 +9,7 @@ taxonomy:
 
 ### 结果展示
 
-结果展示文件需要使用测试脚本（命令）生成 junit 格式的 XML 文件，该文件路径由系统环境变量 ｀TEST_RESULT｀ 指定。例：
+结果展示文件需要使用测试脚本（命令）生成 junit 格式的 XML 文件，该文件路径由系统环境变量｀TEST＿RESULT｀指定。例：
 
 
 ```python
@@ -31,7 +31,7 @@ nosetests test.py --with-xunit --xunit-file=$TEST_RESULT
 
 ### 覆盖测试
 
-覆盖测试文件需要使用测试脚本（命令）生成 一个 xml 格式的 coverage 报告，该文件路径由系统环境变量 ｀TEST_COVERAGE｀ 指定。例：
+覆盖测试文件需要使用测试脚本（命令）生成 一个 xml 格式的 coverage 报告，该文件路径由系统环境变量｀TEST＿COVERAGE｀指定。例：
 
 ```python
 coverage xml -o $TEST_COVERAGE test.py
@@ -77,7 +77,7 @@ coverage xml -o $TEST_COVERAGE test.py
 
 #### 样例 daocloud.yml
 
-代码参见 GitHub 上的 [样例程序](https://github.com/DaoCloud/python-mysql-sample) 。
+代码参见 GitHub 上的 [样例程序](https://github.com/DaoCloud/python-mysql-sample)。
 
 ```yaml
 image: daocloud/ci-python:2.7
@@ -111,7 +111,7 @@ user$ git commit -m 'your message [CI SKIP]'
 user$ git push
 ```
 
-> 注意：`[CI SKIP]` 和 `[SKIP CI]` 不区分大小写，以下形式都是合法的：
+> 注意：`[CISKIP]` 和 `[SKIP CI]` 不区分大小写，以下形式都是合法的：
 
 ```
 [ci skip]
