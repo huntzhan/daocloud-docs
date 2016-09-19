@@ -20,11 +20,11 @@ $ git clone https://github.com/ry/node.git
 
 ### Node.js 的名字的由来？
 
-其实 Node.js 最开始叫 「Web.js」（发布之前），后来因为 API 设计越来越庞大，ry 和他的团队依稀感觉到 Web.js 已经过于狭隘了，于是就有了现在的名字。
+其实 Node.js 最开始叫「Web.js」（发布之前），后来因为 API 设计越来越庞大，ry 和他的团队依稀感觉到 Web.js 已经过于狭隘了，于是就有了现在的名字。
 
 ### Node.js 发展最快的是什么时候？
 
-API 开始大面积进入 Stable 和 Locked 状态时，大批开发者便开始使用 Node.js 干各种事情，这个区间是 v0.6~v0.8 之间。Joyent 公司收购了 Node.js 原开发团队也是推动力之一。
+API 开始大面积进入 Stable 和 Locked 状态时，大批开发者便开始使用 Node.js 干各种事情，这个区间是 v0.6v0.8 之间。Joyent 公司收购了 Node.js 原开发团队也是推动力之一。
 
 ### 为什么后来又出现了 Io.js？现在又到哪里去了？
 
@@ -34,13 +34,13 @@ Io.js 的出现是因为在 Node.js 的核心开发者群体中，出现了一�
 
 ### NPM 现在是怎样的一种存在？
 
-NPM 目前已经是一家独立的公司，由它的发明者 Issac 建立，是如今世界上最大的包管理平台之一，也是发展最快的一个。目前已有 **210,081** 个模块，每天下载次数达到 **83,000,000** 次。
+NPM 目前已经是一家独立的公司，由它的发明者 Issac 建立，是如今世界上最大的包管理平台之一，也是发展最快的一个。目前已有 **210，081** 个模块，每天下载次数达到 **83，000，000** 次。
 
 ### Node.js 究竟怎样的一个发展历程？
 
-1. 混沌期：发布初期，创始人 Ryan Dahl 带著他的团队开发出了以 Web 为中心的“Web.js”，一切都是非常混乱，API大多都还除外研究阶段。
-2. 成长期：Node.js 的核心用户 Isaac Z. Schlueter 开发出奠定了 Node.js 如今地位的重要工具--npm。同时也为他后来成为 Ryan 的接班人的重要条件。
-3. 高速期：connect, express, socket.io 等库的出现吸引了一大波爱好者加入到 Node.js 开发者的阵营中来。CoffeeScript 的出现更是让不少 Ruby 和 Python 开发者找到了学习的理由。期间一大波以 Node.js 作为运行环境的 CLI 工具涌现，其中不乏有用于加速前端开发的优秀工具，如 less, UglifyJS, browserify, grunt 等等。Node.js 的发展势如破竹。
+1. 混沌期：发布初期，创始人 Ryan Dahl 带著他的团队开发出了以 Web 为中心的「Web.js」，一切都是非常混乱，API 大多都还除外研究阶段。
+2. 成长期：Node.js 的核心用户 Isaac Z。 Schlueter 开发出奠定了 Node.js 如今地位的重要工具--npm。同时也为他后来成为 Ryan 的接班人的重要条件。
+3. 高速期：connect，express，socket.io 等库的出现吸引了一大波爱好者加入到 Node.js 开发者的阵营中来。CoffeeScript 的出现更是让不少 Ruby 和 Python 开发者找到了学习的理由。期间一大波以 Node.js 作为运行环境的 CLI 工具涌现，其中不乏有用于加速前端开发的优秀工具，如 less，UglifyJS，browserify，grunt 等等。Node.js 的发展势如破竹。
 4. 更迭期：经过了一大批一线工程师的探索实践后，Node.js 也开始进入了时代的更迭期，新模式代替旧模式，新技术代替旧技术，好实践代替旧实践。ES6 也开始出现在 Node.js 世界中。
 5. 分裂期：ES6 的发展越来越明显，v8 也对 ES6 中的部分特性实现了支持，如 Generator 等等，利用 `--harmony` 作为开启阀门。后来，诞生了 Io.js 分支，再后来也回到了 Node.js 主线上。
 6. 飞速发展期：随著 ES2015 的发展和最终定稿，一大批利用 ES2015 特性开发的新模块出现，如原 [express](http://expressjs.com) 核心团队所开发的 [koa](http://koajs.com)。
@@ -60,7 +60,7 @@ Node.js 的运维部署一直处在一个演变的进行时，从一开始的 `n
 
 ### Node.js 的运维压力
 
-Node.js 与 Go、Java 等语言不同的是，JavaScript 是一门解析型语言，任何非语法上的错误在默认情况下都不会在被运行之前抛出，这就导致了 Node.js 的进程对于错误来说是脆弱的。所以我们需要一些“保姆进程”来保证进程的存活。
+Node.js 「 Go、」ava 等语言不同的是，JavaScript 是一门解析型语言，任何非语法上的错误在默认情况下都不会在被运行之前抛出，这就导致了 Node.js 的进程对于错误来说是脆弱的。所以我们需要一些“保姆进程”来保证进程的存活。
 
 而且 Node.js 的环境部署虽然较几年前已经简单了非常多，但是依然是需要数次的等待。
 
