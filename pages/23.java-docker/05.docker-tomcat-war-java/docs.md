@@ -2,22 +2,22 @@
 title: '使用 Docker 运行 Tomcat ＋ WAR 包 Java 应用'
 ---
 
-> 目标：用 Tomcat 容器运行一个 J2EE 应用
+> 目标：用 Tomcat 容器运行一个 J2 EE 应用
 > 
-> 本项目代码维护在 **[DaoCloud/docker-demo-java-tomcat](https://github.com/DaoCloud/docker-demo-java-tomcat)** 项目中。
+> 本项目代码维护在 **[DaoCloud、docker-demo-java-tomcat](https://github.com/DaoCloud/docker-demo-java-tomcat)** 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 
 ### 前言
 
-在第一篇教程中，基于 Spring Boot 框架创建了一个 Docker 化的 Java 应用，应用编译的结果是一个 jar 包，而通常我们的 J2EE 应用的产出物是一个 war 包，在本教程中，我们将使用基于 Tomcat 的 Docker 容器运行我们的应用。
+在第一篇教程中，基于 Spring Boot 框架创建了一个 Docker 化的 Java 应用，应用编译的结果是一个 jar 包，而通常我们的 J2 EE 应用的产出物是一个 war 包，在本教程中，我们将使用基于 Tomcat 的 Docker 容器运行我们的应用。
 
 ### 创建一个新的 Maven Webapp 项目
 
 执行如下命令，生成 Maven Webapp 项目
 
 ```
-	mvn archetype:generate -DgroupId=io.daocloud.demo \
+    mvn archetype:generate -DgroupId=io.daocloud.demo \
                            -DartifactId=docker-demo-java-tomcat \
                            -DarchetypeArtifactId=maven-archetype-webapp
 ```
@@ -34,7 +34,7 @@ title: '使用 Docker 运行 Tomcat ＋ WAR 包 Java 应用'
 FROM base-tomcat-maven:latest
 ```
 
-如果您使用了 DaoCloud 的代码构建，且当前项目也是使用的 DaoCloud 代码构建，请把 Dockerfile 中的基础镜像修改为您在 DaoCloud 上的镜像地址，如:
+如果您使用了 DaoCloud 的代码构建，且当前项目也是使用的 DaoCloud 代码构建，请把 Dockerfile 中的基础镜像修改为您在 DaoCloud 上的镜像地址，如：
 ```
 FROM daocloud.io/rockytan/docker-base-maven-tomcat:latest
 ```
@@ -74,7 +74,7 @@ RUN set -x \
         && gpg --verify tomcat.tar.gz.asc \
         && tar -xvf tomcat.tar.gz --strip-components=1 \
         && rm bin/*.bat \
-		&& rm -rf webapps/* \
+        && rm -rf webapps/* \
         && rm tomcat.tar.gz*
 ```
 
@@ -113,12 +113,12 @@ docker build -t docker-demo-java-tomcat .
 docker run -d -p 8080:8080 docker-demo-java-tomcat
 ```
 
-随后，打开浏览器，或者使用 curl 命令访问如下地址:
+随后，打开浏览器，或者使用 curl 命令访问如下地址：
 ```
 http://127.0.0.1:8080/demo
 ```
 
-将会看到 Hello World! 的输出，这表示我们基于 J2EE 应用编译的 war 包已经成功使用 Docker 运行起来了。
+将会看到 Hello World！ 的输出，这表示我们基于 J2 EE 应用编译的 war 包已经成功使用 Docker 运行起来了。
 
 #### 致谢
 
