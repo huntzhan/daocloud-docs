@@ -6,7 +6,7 @@ title: '如何开发一个 PHP + New Relic 的生产级 Docker 化应用'
 
 > 目标：我们将为之前创建的 **[PHP + MySQL](https://github.com/DaoCloud/php-apache-mysql-sample)** 应用配置由 **[New Relic](http://www.newrelic.com)** 提供的应用监控探针。
 
-> 本项目代码维护在 **[DaoCloud/php-newrelic-sample](https://github.com/DaoCloud/php-newrelic-sample)** 项目中。
+> 本项目代码维护在 **[DaoCloud、php-newrelic-sample](https://github.com/DaoCloud/php-newrelic-sample)** 项目中。
 
 ### 创建 PHP 应用容器
 
@@ -88,9 +88,9 @@ docker run \
 
 比起本地创建，在云端创建会更简单。
 
-1. 在 GitHub 上 Fork **[DaoCloud/php-newrelic-sample](https://github.com/DaoCloud/php-newrelic-sample)** 或者添加自己的代码仓库。
+1. 在 GitHub 上 Fork **[DaoCloud、php-newrelic-sample](https://github.com/DaoCloud/php-newrelic-sample)** 或者添加自己的代码仓库。
 2. 注册成为 DaoCloud 用户。
-3. 在 DaoCloud 「控制台」中选择「代码构建」。
+3. 在 DaoCloud「控制台」中选择「代码构建」。
 4. 创建新项目，选择代码源，开始构建镜像。
 5. 将构建的应用镜像部署在云端并指定 `NEW_RELIC_APP_NAME` 和 `NEW_RELIC_LICENSE_KEY` 环境变量。
 
