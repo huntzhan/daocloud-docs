@@ -81,9 +81,9 @@ DaoCloud 考虑到国内的用户需要，提供了使用微信账号直接注�
 
 ![微信关注](wechat-4.jpeg?resize=600)
 
->>>>> 现在绑定微信账号，在原有资源基础上，您还可以额外获得一个 1X 资源，可用于创建容器或服务。
+>>>>> 现在绑定微信账号，在原有资源基础上，您还可以额外获得一个 1 X 资源，可用于创建容器或服务。
 
->>>>> 为了 DaoCloud 服务的正常使用和您的 DaoCloud 账号安全，我们建议您在使用微信注册 DaoCloud 账号后，尽快将其与您的电子邮箱绑定，绑定方法将在「[用户账号设置](http://docs.daocloud.io/daocloud-account-setting/account-setting) 」中介绍。
+>>>>> 为了 DaoCloud 服务的正常使用和您的 DaoCloud 账号安全，我们建议您在使用微信注册 DaoCloud 账号后，尽快将其与您的电子邮箱绑定，绑定方法将在「[用户账号设置](http://docs.daocloud.io/daocloud-account-setting/account-setting)」中介绍。
 
 ### 完成 DaoCloud 账号的注册后
 
@@ -105,4 +105,4 @@ DaoCloud 考虑到国内的用户需要，提供了使用微信账号直接注�
 
 「镜像仓库」是一个包含您通过「代码构建」功能创建的 Docker 镜像、DaoCloud 官方提供的镜像和官方 DockerHub 提供的镜像的仓库，您可以通过它把各种 Docker 镜像部署到您套餐内包含的 DaoCloud 云平台或自有集群的主机上。
 
->>>>> 为了能得到更好的 DaoCloud 服务使用体验，我们推荐您将 GitHub 等第三方 Git 平台的账号与微信账号都与您的 DaoCloud 账号绑定，绑定方法将在「[用户账号设置](http://docs.daocloud.io/daocloud-account-setting/account-setting) 」文档中介绍。
+>>>>> 为了能得到更好的 DaoCloud 服务使用体验，我们推荐您将 GitHub 等第三方 Git 平台的账号与微信账号都与您的 DaoCloud 账号绑定，绑定方法将在「[用户账号设置](http://docs.daocloud.io/daocloud-account-setting/account-setting)」文档中介绍。
