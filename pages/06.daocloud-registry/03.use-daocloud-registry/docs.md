@@ -14,7 +14,7 @@ DaoCloud 镜像仓库分为两种部署目标，一种是可以部署在 DaoClou
 #### 热门应用：
 
 * 2048，数字益智游戏，可以部署在 DaoCloud 平台和您的主机之上，是快速展示 Docker 部署能力的极佳例子，游戏本身可玩性很强，还兼容手机端的布局。
-* phpMyAdmin，一个以PHP为基础，以Web-Base方式架构在网站主机上的MySQL的数据库管理工具，在 DaoCloud 部署此应用，在部署时把它与您的 MySQL 服务实例绑定，即可用来管理 DaoCloud 上您的 MySQL 数据库实例。
+* phpMyAdmin，一个以 PHP 为基础，以 Web-Base 方式架构在网站主机上的 MySQL 的数据库管理工具，在 DaoCloud 部署此应用，在部署时把它与您的 MySQL 服务实例绑定，即可用来管理 DaoCloud 上您的 MySQL 数据库实例。
 * MongoExpress，使用 Node.js 和 Express 框架实现的轻量级 MongoDB 数据库管理程序，通过它您可以轻松管理您的 MongoDB 数据库。在 DaoCloud 部署此应用，在部署时把它与您的 MongoDB 服务实例绑定，即可用来管理 DaoCloud 上您的 MongoDB 数据库实例。
 
 #### 上传您的应用
