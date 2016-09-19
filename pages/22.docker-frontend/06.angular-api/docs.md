@@ -39,7 +39,7 @@ gulp.task('env:config', function () {
 });
 ```
 
-**并将 `env:config` task 加入到 `inject` task (`/gulp/inject.js:12`) 之前**。
+**并将 `env:config` task 加入到 `inject` task 「`/gulp/inject.js:12`)之前**。
 ```
 gulp.task('inject', ['scripts', 'styles','env:config'], function () { ...})
 ```
@@ -125,7 +125,7 @@ COPY . /app/
 CMD gulp build && cp -r dist/* /usr/share/nginx/html/ && nginx -g 'daemon off;'
 ```
 
-有了 Dockerfile 以后，我们可以运行下面的命令构建前端镜像并命名为 my-angular-api-app：
+有了 Dockerfile 以后，我们可以运行下面的命令构建前端镜像并命名为 my-angular-api-App：
 
 ```bash
 docker build -t my-angular-api-app .
