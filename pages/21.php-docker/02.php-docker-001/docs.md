@@ -6,7 +6,7 @@ title: '如何制作一个定制的 PHP 基础 Docker 镜像'
 
 > 目标：准备一个定制的 PHP 基础镜像。基础镜像，通常为含最小功能的系统镜像，之后的应用镜像都以此为基础。
 
-> 本项目代码维护在 **[DaoCloud/php-apache-image](https://github.com/DaoCloud/php-apache-image)** 项目中。
+> 本项目代码维护在 **[DaoCloud、php-apache-image](https://github.com/DaoCloud/php-apache-image)** 项目中。
 
 ### 制作基础镜像
 
