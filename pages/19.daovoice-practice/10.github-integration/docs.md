@@ -8,4 +8,4 @@ title: 'GitHub 集成'
 #### 使用
 
 
-#### 通过GitHub和DaoCloud开发联动
+#### 通过 GitHub 和 DaoCloud 开发联动
