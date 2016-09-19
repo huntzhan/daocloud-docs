@@ -3,13 +3,13 @@ title: 'Docker 容器明文密码问题解决之道'
 ---
 
 > **「Allen 谈 Docker 系列」**
-> DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
+> DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
 ---
 
 
 ## 前言
-Docker 带着 “Dockerize Everything” 的口号，以“软件标准”的姿态展现于世人面前，不断影响大家对于软件的理解。然而现实是否就如想象中的那么饱满，新的科技诞生之际，是摧枯拉朽之势，还是循序渐进，皆有个过程？面对异军突起的 Docker，软件传统的精髓又是何去何从？这些无一不是值得深思的话题。
+Docker 带着 「Dockerize Everything」 的口号，以「软件标准」的姿态展现于世人面前，不断影响大家对于软件的理解。然而现实是否就如想象中的那么饱满，新的科技诞生之际，是摧枯拉朽之势，还是循序渐进，皆有个过程？面对异军突起的 Docker，软件传统的精髓又是何去何从？这些无一不是值得深思的话题。
 
 在《存储类 Docker 容器的明文密码问题》一文中，我们初步领略了存储类软件与 Docker 结合时，存在的些许安全隐患，比如明文密码问题。
 
@@ -49,7 +49,7 @@ docker run -d -e MYSQL_ROOT_PASSWORD=docker --name MySQL2 mysql
 
 **3.待 MySQL2 启动完毕，使用`docker stop`命令停止 MySQL2 容器，并将 MySQL2 容器 volume2 内的文件全部删除，接着将 volume1 的内容拷贝至 volume2 下，最终启动 MySQL2。**
 
-通过以上三个步骤，我们直接交付 MySQL2 容器，此时 MySQL2 容器中 MySQL 的 root 密码为 daocloud，即目标达成。虽然 MySQL2 容器的环境变量 MYSQL_ROOT_PASSWORD 依旧是 docker，但是 MySQL 引擎使用的密文密码已经转变为 daocloud，交付完毕的 MySQL2 容器中不存在任何有关字符串 daocloud 的`明文`信息，同时无需再使用的 MySQL1 容器也被我们删除。
+通过以上三个步骤，我们直接交付 MySQL2 容器，此时 MySQL2 容器中 MySQL 的 root 密码为 daocloud，即目标达成。虽然 MySQL2 容器的环境变量 MYSQL＿ROOT＿PASSWORD 依旧是 docker，但是 MySQL 引擎使用的密文密码已经转变为 daocloud，交付完毕的 MySQL2 容器中不存在任何有关字符串 daocloud 的`明文`信息，同时无需再使用的 MySQL1 容器也被我们删除。
 
 上述流程的执行，可以很巧妙的通过`替换volume`的方式，完成密文的转移，同时使得明文环境变量的失效。
 
@@ -62,9 +62,9 @@ docker run -d -e MYSQL_ROOT_PASSWORD=docker --name MySQL2 mysql
 
 不可否认，上述观点同样具有可行性。仔细分析和对比两种解决方案，可以看到两者之间存在一些明显的差异。
 
-最大的差异性，当属通用性。`替换 volume`的方式，虽然在容器创建流程中加入了部分额外的操作（比如创建两个容器、启动容器、替换 volume等），但是在通用性方面，优势十分明显。通用性的体现何在？本文举例的是 MySQL 容器，其实其他存储类 Docker 容器如 MongoDB、Redis 等，均可以采用这种方式。
+最大的差异性，当属通用性。`替换 volume`的方式，虽然在容器创建流程中加入了部分额外的操作（比如创建两个容器、启动容器、替换 volume 等），但是在通用性方面，优势十分明显。通用性的体现何在？本文举例的是 MySQL 容器，其实其他存储类 Docker 容器如 MongoDB、Redis 等，均可以采用这种方式。
 
-换言之，对于存储类 Docker 容器而言，Docker Daemon 的管理员无需获知容器内部运行的是何种服务，机械化操作`替换volume`即可导致明文密码失效。通过 mysql-client 修改密码的方式，只能由容器的用户来完成，而现实情况中， Docker Daemon 管理员与容器用户很有可能并非同一个人，尤其是在公有云服务上。因此，Docker Daemon 交付出的容器，必须由用户进行二次加工，才能真正满足用户需求，无疑在便捷性方面，无法尽如人意。
+换言之，对于存储类 Docker 容器而言，Docker Daemon 的管理员无需获知容器内部运行的是何种服务，机械化操作`替换volume`即可导致明文密码失效。通过 mysql-client 修改密码的方式，只能由容器的用户来完成，而现实情况中，Docker Daemon 管理员与容器用户很有可能并非同一个人，尤其是在公有云服务上。因此，Docker Daemon 交付出的容器，必须由用户进行二次加工，才能真正满足用户需求，无疑在便捷性方面，无法尽如人意。
 
 更为细致的比较，我们就能发现：其实两者的实现的立足点不同。`替换 volume`则是从 Docker 层出发；而`修改密码`则是站在应用层出发。
 
