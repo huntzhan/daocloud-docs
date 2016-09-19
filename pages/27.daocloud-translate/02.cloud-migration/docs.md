@@ -10,7 +10,7 @@ title: 译见｜向云迁移不仅是简单的计算
 
 #### 作者介绍
 
-J. Peter Bruzzese 荣膺 5 次微软 MVP，为 Office 365 和 Exchange 技术专家。他是 ClipTraining 的联合创始人，ConversationalGeek.com 的创造者，Pluralsight 上 Exchange/Office 365 相关视频内容的讲师，多家公司的顾问。他著有数十本技术书籍，在全球范围内销售。
+J. Peter Bruzzese 荣膺 5 次微软 MVP，为 Office 365 和 Exchange 技术专家。他是 ClipTraining 的联合创始人，ConversationalGeek.com 的创造者，Pluralsight 上 Exchange、Office 365 相关视频内容的讲师，多家公司的顾问。他著有数十本技术书籍，在全球范围内销售。
 
 ---
 
