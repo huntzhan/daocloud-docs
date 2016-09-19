@@ -16,20 +16,20 @@ title: '云端 Dockerfile'
 
 用户可以在线编辑并保存云端 Dockerfile，过程如下所示：
 
-* 在项目页面，点击“创建云端 Dockerfile”
+* 在项目页面，点击「创建云端 Dockerfile」
 
 ![](Dashboard_%C2%B7_create.png)
 
-* 如果用户没有创建过云端 Dockerfile，系统会试图根据用户指定的项目构建位置（在项目设置中指定，默认为项目根目录）从 Master 分支查找 Dockerfile。 如果在代码仓库中找不到 Dockerfile，系统会显示一个示例 Dockerfile
-* 可以在编辑框中编辑 Dockerfile，最后点击“保存云端 Dockerfile”按钮
+* 如果用户没有创建过云端 Dockerfile，系统会试图根据用户指定的项目构建位置（在项目设置中指定，默认为项目根目录）从 Master 分支查找 Dockerfile。如果在代码仓库中找不到 Dockerfile，系统会显示一个示例 Dockerfile
+* 可以在编辑框中编辑 Dockerfile，最后点击「保存云端 Dockerfile」按钮
 
 ![](clouddockerfile-save.png)
 
 ### 如何调试云端 Dockerfile
 
-在很多场景下，用户需要在线调试 Dockerfile，如果每次都更新代码仓库中的 Dockerfile 版本再构建镜像的话，效率很低。 这时就可以使用云端 Dockerfile 进行快速在线调试。 
+在很多场景下，用户需要在线调试 Dockerfile，如果每次都更新代码仓库中的 Dockerfile 版本再构建镜像的话，效率很低。这时就可以使用云端 Dockerfile 进行快速在线调试。 
 
-用户在线编辑 Dockerfile 后，可以点击窗口下面的“尝试构建”，点击后会自动切换到构建日志。 请注意，*”尝试构建“仅运行 docker build，并不会产生镜像。*
+用户在线编」 Doc「erfile 后，可以点击窗口下面的「尝试构建」，点击后会自动切换到构建日志。请注意，*”尝试构建“仅运行 docker build，并不会产生镜像。*
 
 ![](clouddockerfile-debuy.png)
 
