@@ -16,8 +16,8 @@ _下面的例子以 Github 为例_
 
 ![](step2.png)
 
-### 添加到用户的SSH_key
-在某个 Git 用户账户下添加上面复制的 Deploy Key 为用户的 SSH_Key。请注意，该用户需要有对应代码项目以及所有依赖的 submodule 项目的访问权限
+### 添加到用户的 SSH＿key
+在某个 Git 用户账户下添加上面复制的 Deploy Key 为用户的 SSH＿Key。请注意，该用户需要有对应代码项目以及所有依赖的 submodule 项目的访问权限
 
 ![](step3.png)
 
