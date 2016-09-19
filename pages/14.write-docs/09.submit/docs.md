@@ -16,14 +16,14 @@ DaoCloud 文档采用 Grav CMS，内容通过 Markdown 格式写作，并在 Git
 #### 创建本地环境
 
 1. [下载 Grav 主程序](http://getgrav.org/downloads)
-2. 把 ZIP 包解压缩到您的 weboot 目录， (例如 `~/www/grav-core/`)
-3. [下载](https://github.com/getgrav/grav-learn/archive/develop.zip) 并解压缩，或者直接[克隆](https://github.com/getgrav/grav-learn.git), 把 daocloud-docs 覆盖 grav-core 的 user 目录（ `~/www/grav-core/user/`）
-4. 在 grav－core 根目录运行 `bin/grav install`  (e.g. `~/www/grav-core/`)完成以来安装
+2. 把 ZIP 包解压缩到您的 weboot 目录，（例如 `~/www/grav-core/`）
+3. [下载](https://github.com/getgrav/grav-learn/archive/develop.zip) 并解压缩，或者直接[克隆](https://github.com/getgrav/grav-learn.git)，把 daocloud-docs 覆盖 grav-core 的 user 目录（ `~/www/grav-core/user/`）
+4. 在 grav－core 根目录运行 `bin/grav install`  （e.g「 `~/www/grav-core/`)完成以来安装
 5. 如需运行，请先安装 PHP，然后使用 `php -S localhost:8000`，启动程序
 
 注意：
 
-我们推荐使用 Skitch 软件截屏并加标注，除了特别小的内容，截屏横向宽度不要小于 800px。另外，请确保 daocloud-docs 文件夹下有 .dependencies 隐藏文件，否则无法完成 grav 插件的依赖安装
+我们推荐使用 Skitch 软件截屏并加标注，除了特别小的内容，截屏横向宽度不要小于 800 px。另外，请确保 daocloud-docs 文件夹下有 。dependencies 隐藏文件，否则无法完成 grav 插件的依赖安装
 如无此文件，可根据以下内容创建。
 
 
