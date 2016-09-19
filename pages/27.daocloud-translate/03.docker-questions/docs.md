@@ -10,13 +10,13 @@ title: 译见｜不可变基础设施与一次性组件
 
 #### 译者注
 
-2013年6月，Chad 在自己的博客中撰写一篇 ***Trash Your Servers and Burn Your Code: Immutable Infrastructure and Disposable Components*** 的文章，提出了 **Immutable Infrastructure** 的概念。这一前瞻性的构想，伴随着 Docker 容器技术的兴起、微服务架构的流行，得到了事实上的检验。时隔两年，我们不妨再温故而知新。
+2013 年 6 月，Chad 在自己的博客中撰写一篇 ***Trash Your Servers and Burn Your Code：Immutable Infrastructure and Disposable Components*** 的文章，提出了 **Immutable Infrastructure** 的概念。这一前瞻性的构想，伴随着 Docker 容器技术的兴起、微服务架构的流行，得到了事实上的检验。时隔两年，我们不妨再温故而知新。
 
 #### 作者简介
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-6-2.png)
 
-Chad Fowler ，热情的 Ruby/Rails 信徒，活跃于各种技术大会上，知名 TODO 软件公司 6Wunderkinder 的 CTO。他是 *Rails Recipes*、*The Passionate Programmer: Creating a Remarkable Career in Software Development*、 *Programming Ruby*、 *The Ruby Way*、 *Professional Apache Tomcat* 等技术书籍的作者；同时也是 The International Ruby Conference 和 RailsConf 等技术大会的组织者。
+Chad Fowler，热情的 Ruby、Rails 信徒，活跃于各种技术大会上，知名 TODO 软件公司 6 Wunderkinder 的 CTO。他是 *Rails Recipes*、*The Passionate Programmer：Creating a Remarkable Career in Software Development*、*Programming Ruby*、*The Ruby Way*、*Professional Apache Tomcat* 等技术书籍的作者；同时也是 The International Ruby Conference 和 RailsConf 等技术大会的组织者。
 
 ---
 
@@ -38,7 +38,7 @@ Chad Fowler ，热情的 Ruby/Rails 信徒，活跃于各种技术大会上，�
 
 为了避免种种困境，在过去的多年里，遵循自动化原则，我们多方设法。最后我们在工作中引入了「不可变部署」这一概念。
 
-身处软件业的我们开始意识到软件架构中「不可变」带来的好处。我们可以看到，过去几年里，对函数编程技术的兴趣日渐增多，也促进了 Erlang、 Scala、 Haskell 和 Clojure 等语言的流行。函数式语言提供了不可变数据结构和单一任务变量。我们很多人仅根据已有经验就相信，「不可变」将会让程序更合理，也更难被搞砸。
+身处软件业的我们开始意识到软件架构中「不可变」带来的好处。我们可以看到，过去几年里，对函数编程技术的兴趣日渐增多，也促进了 Erlang、Scala、Haskell 和 Clojure 等语言的流行。函数式语言提供了不可变数据结构和单一任务变量。我们很多人仅根据已有经验就相信，「不可变」将会让程序更合理，也更难被搞砸。
 
 那为什么不把这个方法应用到基础设施中呢？如果你非常肯定系统是自动化创建，并且从创建之时起就不会进行改动，那我上文提及的大多数问题就不复存在。
 
@@ -48,7 +48,7 @@ Chad Fowler ，热情的 Ruby/Rails 信徒，活跃于各种技术大会上，�
 > 修正应用？
 - 也是如此。构建一个新版本的服务器或者镜像，把旧的丢弃。
 
-在 6Wunderkinder ，我们在过去的四个月里（注：本文写于 2013 年 6 月）一直实践此方法。我们有信心进行后端基础设施的快速迭代，让我们的产品开发更快，对我们的用户来说更容易扩展和更可靠，也更加灵活、自由地迁移应用。
+在 6 Wunderkinder，我们在过去的四个月里（注：本文写于 2013 年 6 月）一直实践此方法。我们有信心进行后端基础设施的快速迭代，让我们的产品开发更快，对我们的用户来说更容易扩展和更可靠，也更加灵活、自由地迁移应用。
 
 更有价值的是，作为一个新的编程范式，基础设施这一视角从根本上改变了我对系统的看法。新模式的涌现，不仅改变了我对部署的认识，也改变了我对应用代码和团队结构的看法。
 
