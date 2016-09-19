@@ -6,7 +6,7 @@ title: '存储类 Docker 容器的明文密码问题'
 
 > **「Allen 谈 Docker 系列」**
 
-> DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
+> DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
 ---
 
@@ -14,7 +14,7 @@ Docker 诞生初期，以 application-centric 的概念吸引全球技术人员�
 
 基于单进程模式以及环境一致性的明显优势，越来越多的软件走进了 Docker 的世界。以一个最基本的博客系统为例，WordPress 博客系统成功定制为 Docker 镜像之后，秒级即可完成部署。另外，WordPress 系统所需完成的数据存储，也可以通过一个最为基本的 MySQL 容器来完成。
 
-Docker 是一项工具，在它的眼中只有 Docker 镜像以及 Docker 容器等。原则上只要是进程，Docker都可以容下。WordPress 可以是一个进程， MySQL 也可以是一个进程，因此两者进入 Docker 的范畴，似乎并无牵强。话虽如此，然而很多传统的服务在 Linux 系统上以一个普通进程运行，已经经历了少则五年，多则数十年，似乎也完全经受住了历史的考验，突然进入容器世界，光鲜外表之下，是否也会水土不服，是否也会存在一些弊病？
+Docker 是一项工具，在它的眼中只有 Docker 镜像以及 Docker 容器等。原则上只要是进程，Docker 都可以容下。WordPress 可以是一个进程，MySQL 也可以是一个进程，因此两者进入 Docker 的范畴，似乎并无牵强。话虽如此，然而很多传统的服务在 Linux 系统上以一个普通进程运行，已经经历了少则五年，多则数十年，似乎也完全经受住了历史的考验，突然进入容器世界，光鲜外表之下，是否也会水土不服，是否也会存在一些弊病？
 
 一谈到数据，大家往往都比较敏感，最为致命的当属数据的泄漏，同时数据存储的可靠性也至关重要，毕竟没有人希望发生数据的丢失。今天，我们就以 MySQL 一类的数据存储容器为例，从数据库密码安全的角度谈谈 Docker 容器。
 
@@ -38,14 +38,14 @@ Docker 是一项工具，在它的眼中只有 Docker 镜像以及 Docker 容器
 docker run -d MYSQL_ROOT_PASSWORD=password mysql:5.6.22
 ```
 
-以上命令指定运行了一个 MySQL 容器，MySQL 的版本为5.6.22，同时为容器的运行设置了一个环境变量，环境变量名为 MYSQL_ROOT_PASSWORD，值为 password，换言之该数据库的 root 用户密码即为 password。
+以上命令指定运行了一个 MySQL 容器，MySQL 的版本为 5.6.22，同时为容器的运行设置了一个环境变量，环境变量名为 MYSQL＿ROOT＿PASSWORD，值为 password，换言之该数据库的 root 用户密码即为 password。
 
 命令理解起来很简单，稍显复杂的是运行背后到底到底发生了什么，明文体现在哪，安全的环节到底出在哪？理解这几个问题，我们可以从两个层面出发：`Docker 容器启动`与 `MySQL 启动`入手。
 
 **1. Docker 容器的启动**
 
 对于启动 `docker run` 命令的用户而言，一切的管理操作都仅仅是 Docker 层面的。在这个环节中，一个不容忽视的元素就是`环境变量`，即 `MYSQL_ROOT_PASSWORD=password`。环境变量在 Docker 世界中扮演着举足轻重的角色，容器感受配置的方式，Docker 都希望通过环境变量来完成，然而这也恰恰成了一个隐患。
- 
+
 Docker 层面的环境变量，作为一个配置项，会被 Docker 守护进程统一的管理起来，**环境变量的信息和创建的 Docker 容器紧紧捆绑在一起，除非容器删除，否则环境变量信息将永远存在（明文）。**当然，作为环境变量的存在，最终都会被进程感知，发挥具体的用途，如此处 `MYSQL_ROOT_PASSWORD` 将为 MySQL 数据库设置 root 用户密码。
 
 **2. MySQL 启动**
@@ -56,23 +56,23 @@ Docker 层面的环境变量，作为一个配置项，会被 Docker 守护进�
 CREATE USER 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}' ;
 ``` 
 
-可见，MySQL 容器的启动过程中，首先需要使用环境 MYSQL_ROOT_PASSWORD 来创建用户并授权。当通过 SQL 脚本使用完这个环境之后，传统 MySQL 服务自然不会再将该密码明文保存，因此在 MySQL 层面并不存在任何明文的内容，原因很简单，MySQL 传统的密码管理不是明文方式。
+可见，MySQL 容器的启动过程中，首先需要使用环境 MYSQL＿ROOT＿PASSWORD 来创建用户并授权。当通过 SQL 脚本使用完这个环境之后，传统 MySQL 服务自然不会再将该密码明文保存，因此在 MySQL 层面并不存在任何明文的内容，原因很简单，MySQL 传统的密码管理不是明文方式。
 
 **初步总结**：传统如 MySQL 之类的数据类存储容器由于需要密码设置，而 Docker 容器在 Docker 层面往往通过明文的环境变量来完成密码的传递，因此存在密码易泄漏的情况。
 
 ### 明文密码存储多份
 
-严谨来讲，对于 MySQL 引擎而言，并非存在明文存储的密码。然而由于 Docker 层面环境变量的存在，导致代表 MySQL 密码的环境变量 MYSQL_ROOT_PASSWORD 很可能会恶意利用，从而影响存储数据的安全性。
+严谨来讲，对于 MySQL 引擎而言，并非存在明文存储的密码。然而由于 Docker 层面环境变量的存在，导致代表 MySQL 密码的环境变量 MYSQL＿ROOT＿PASSWORD 很可能会恶意利用，从而影响存储数据的安全性。
 
 在此，我们可以进一步介绍，关于一个容器的环境变量，在一台机器究竟存在多少份？
 
-**1. Docker 守护进程内存数据**: 运行中的容器，Docker 守护进程均会在内存中为其维护一个 container 对象，所有的信息均可以通过 `docker inspect container_id` 命令获取。获取信息中自然包括所有的环境变量，MySQL 容器的话，当然也包含明文的环境变量 MYSQL_ROOT_PASSWORD。一旦 Docker 守护进程的权限暴露，数据的安全也就直接沦陷。
+**1. Docker 守护进程内存数据**：运行中的容器，Docker 守护进程均会在内存中为其维护一个 container 对象，所有的信息均可以通过 `docker inspect container_id` 命令获取。获取信息中自然包括所有的环境变量，MySQL 容器的话，当然也包含明文的环境变量 MYSQL＿ROOT＿PASSWORD。一旦 Docker 守护进程的权限暴露，数据的安全也就直接沦陷。
 
-**2. config.json 文件**: 对于每一个容器而言，Docker 守护进程均为其创建一个 config.json 文件，该文件持久化于 /var/lib/docker/containers/container_id/config.json，该文件几乎与上述 container 对象的内容无异，因此，明文密码也存在于磁盘。超级用户的权限，自然也不可轻易交出，否则所有的容器信息，全盘托出。
+**2. config.json 文件**：对于每一个容器而言，Docker 守护进程均为其创建一个 config.json 文件，该文件持久化于 、var、lib、docker、containers、container＿id、config.json，该文件几乎与上述 container 对象的内容无异，因此，明文密码也存在于磁盘。超级用户的权限，自然也不可轻易交出，否则所有的容器信息，全盘托出。
 
-**3. Docker 容器进程环境变量**: 容器的运行过程中，如果使用 `docker exec` 命令进入容器运行 env 命令，我们同样可以看到环境变量中拥有明文密码 MYSQL_ROOT_PASSWORD。因此，Docker 守护进程的权限绝对应该严控把关。
+**3. Docker 容器进程环境变量**：容器的运行过程中，如果使用 `docker exec` 命令进入容器运行 env 命令，我们同样可以看到环境变量中拥有明文密码 MYSQL＿ROOT＿PASSWORD。因此，Docker 守护进程的权限绝对应该严控把关。
 
-**4. docker-compose.yml 文件**: 如果使用 docker-compose 来完成容器的启动，那么 docker-compose.yml 文件中必然也会存在环境变量的定义。由于该文件的存放完全有可能存在于普通用户目录下，因此安全问题更加明显。
+**4. docker-compose.yml 文件**：如果使用 docker-compose 来完成容器的启动，那么 docker-compose.yml 文件中必然也会存在环境变量的定义。由于该文件的存放完全有可能存在于普通用户目录下，因此安全问题更加明显。
 
 
 ## 总结
