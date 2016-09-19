@@ -6,7 +6,7 @@ title: 'docker logs 实现剖析'
 
 >**「Allen 谈 Docker 系列」**
 
->DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
+>DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
 ---
 
@@ -16,15 +16,15 @@ Docker 还可以将应用快速分发，即为 ship；
 
 最后，Docker 依然有能力秒级启动应用，即为 run。
 
-Build，Ship，Run，简单的3步，分分钟为 DevOps 创建了管理应用生命周期的捷径。
+Build，Ship，Run，简单的 3 步，分分钟为 DevOps 创建了管理应用生命周期的捷径。
 
 应用是运行起来了，应用运行后，运行状态相信是工程师最关心的点。这一点，Docker 如何帮工程师排忧解难呢？
 
-想知道应用是否仍在运行？`docker ps` 会告诉您。
+想知道应用是否仍在运行？`dockerps` 会告诉您。
 
-想获知应用的资源使用情况如何？`docker stats` 为您呈现。
+想获知应用的资源使用情况如何？`dockerstats` 为您呈现。
 
-想了解应用的运行日志？`docker logs` 绝对是您最好的选择。
+想了解应用的运行日志？`dockerlogs` 绝对是您最好的选择。
 
 如今，Docker 容器应用的日志分析，已经是一个获悉应用运行逻辑的状态，以及分析应用运行性能的不二法宝。
 
@@ -53,7 +53,7 @@ Docker 从诞生伊始，就从未对用户应用做出标准性规范，日志�
 
 ## 3. 用户如何查看容器日志？
 
-日志总是需要被用户查看的，Docker 则通过 `docker logs` 命令向用户提供日志接口。`docker logs` 实现原理的本质均基于与容器一一对应的 `<container-id>-json.log`，除了 `docker logs -f` 命令。
+日志总是需要被用户查看的，Docker 则通过 `docker logs` 命令向用户提供日志接口。`dockerlogs` 实现原理的本质均基于与容器一一对应的 `<container-id>-json.log`，除了 `docker logs -f` 命令。
 
 以下简要介绍 `docker logs` 命令下各参数的含义：
 
@@ -61,16 +61,16 @@ Docker 从诞生伊始，就从未对用户应用做出标准性规范，日志�
 - tail：从尾部开始按需显示容器日志
 - since：从某个时间开始显示容器日志
 - timestamp：显示容器日志时显示日志时间戳
-- f：将当前时间点，容器日志文件 `<container-id>-json.log` 中的日志信息全部打印；此时间点之后所有的日志信息与日志文件无关，直接接收goroutine 往日志文件中写的文件描述符，并显示
+- f：将当前时间点，容器日志文件 `<container-id>-json.log` 中的日志信息全部打印；此时间点之后所有的日志信息与日志文件无关，直接接收 goroutine 往日志文件中写的文件描述符，并显示
 
 总而言之，Docker 容器日志的处理并不会很复杂。此文阅完，日志的来龙去脉，一清二楚。
 
 当然，您也可以做两个实验检验以上内容：
 
 - Experiement 1：通过 Docker 运行一个应用，日志会从标准输出打印日志，然后通过 `docker logs` 查看日志。
-- Experiement 2：运行一个 Docker 容器，随后 `docker exec` 命令进入这个容器，接着通过 `echo`、`cat` 等命令向容器的标准输出中打印内容，最后通过 `docker logs` 查看日志。
+- Experiement 2：运行一个 Docker 容器，随后 `docker exec` 命令进入这个容器，接着通过 `echo`、`cat`等命令向容器的标准输出中打印内容，最后通过 `docker logs` 查看日志。
 
-实验是检验真理的唯一标准。您会发现，Experiement 1 中，查看日志会有日志；而 Experiement 2 中却找不到 `echo`、`cat` 等命令标准输出的日志内容。
+实验是检验真理的唯一标准。您会发现，Experiement 1 中，查看日志会有日志；而 Experiement 2 中却找不到 `echo`、`cat`等命令标准输出的日志内容。
 
 Experiement 2 做完，瞬间毁三观，难道以上内容有差错？可以明确告诉您没有，那矛盾如何会存在？
 
