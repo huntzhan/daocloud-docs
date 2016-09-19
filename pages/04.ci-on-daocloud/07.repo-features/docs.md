@@ -24,11 +24,11 @@ taxonomy:
 ##### 说明：
 
 0. true：支持；false：不支持
-1. commit_push：push 时自动持续集成。
-2. pull_request：创建、更新 pull request 时自动持续集成。不能支持这个主要是因为没有 git 接口获得代码。
-3. private_repo：获得私有项目代码。
-4. set_commit_status：设置 remote 上 commit 的状态，如 failed、success、error 等，只有 Github 支持。
-5. tag_build：push 一个 tag 时触发 build image。
+1. commit＿push：push 时自动持续集成。
+2. pull＿request：创建、更新 pull request 时自动持续集成。不能支持这个主要是因为没有 git 接口获得代码。
+3. private＿repo：获得私有项目代码。
+4. set＿commit＿status：设置 remote 上 commit 的状态，如 failed、success、error 等，只有 Github 支持。
+5. tag＿build：push 一个 tag 时触发 build image。
 
 #### Coding
 由于受到 Coding 系统设置的限制，DaoCloud 保存的用于访问 Coding 的 Token（Deploye Key）会不定期失效，如您遇到无法访问 Coding 代码库的情况，可以尝试重新绑定，就会重新创建 Token。
