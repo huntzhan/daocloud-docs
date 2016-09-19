@@ -6,7 +6,7 @@ title: '如何配置一个 Docker 化持续集成的 PHP 开发环境'
 
 > 目标：我们将为之前创建的 **[PHP + MySQL](https://github.com/DaoCloud/php-apache-mysql-sample)** 应用编写测试代码和创建持续集成环境。
 
-> 本项目代码维护在 **[DaoCloud/php-apache-mysql-sample](https://github.com/DaoCloud/php-apache-mysql-sample)** 项目中。
+> 本项目代码维护在 **[DaoCloud、php-apache-mysql-sample](https://github.com/DaoCloud/php-apache-mysql-sample)** 项目中。
 
 ### 利用 PHPUnit 编写单元测试（本地）
 
