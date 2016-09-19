@@ -8,13 +8,13 @@ title: 译见｜2015年度云之白皮书：业界里程碑回顾与未来展望
 
 #### 译者注
 
-Adrian 作为业界领袖，对于云计算有着深刻观察和敏锐的判断。在 2014 年 Gigaom 举办的 Structure 大会，他进行了如下预测：IaaS 爆发式增长； AWS 和 Azure 不断加大投入，巨头间「圈地运动”方兴未艾；Docker 横空出世，掀起颠覆热潮；Openstack 生态日渐成熟；Go 语言成开发者新宠。展望未来，他认为 Docker 将成为标准的生产工具，并且为大量企业使用；数据中心会交叉使用 AWS 、 Azure 和 Google Cloud 的功能；精品级的、高安全系统将会使用云计算来构建。
+Adrian 作为业界领袖，对于云计算有着深刻观察和敏锐」判断。在 2014 年 Gigaom 举办的 Structure 大会，他进行了如下预测：IaaS 爆发式增长；AWS 和 Azure 不断加大投入，巨头间「圈地运动”方兴未艾；Docker 横空出世，掀起颠覆热潮；Openstack 生态日渐成熟；Go 语言成开发者新宠。展望未来，他认为 Docker 将成为标准的生产工具，并且为大量企业使用；数据中心会交叉使用 AWS、Azure 和 Google Cloud 的功能；精品级的、高安全系统将会使用云计算来构建。
 
 #### 作者简介
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-3-1.jpg)
 
-Adrian Cockcroft ，硅谷老牌风投机构 Battery Vetures 的技术专家。在此之前是著名流媒体服务商 Netflix 的云平台架构师，领导了 Netflix 向高扩展、高可用的公有云平台架构的迁移，开源了云原生的 NetflixOSS 平台。他也是 eBay Research Labs 的创始成员之一。作为 Sun Microsystems 杰出工程师，他著有畅销的《Sun Performance and Tuning》一书，也是高性能技术计算部门的首席架构师。
+Adrian Cockcroft，硅谷老牌风投机构 Battery Vetures 的技术专家。在此之前是著名流媒体服务商 Netflix 的云平台架构师，领导了 Netflix 向高扩展、高可用的公有云平台架构的迁移，开源了云原生的 NetflixOSS 平台。他也是 eBay Research Labs 的创始成员之一。作为 Sun Microsystems 杰出工程师，他著有畅销的《Sun Performance and Tuning》一书，也是高性能技术计算部门的首席架构师。
 
 Adrian Cockcroft 毕业于伦敦城市大学，获应用物理和电子学学位，分别于 2011 年和 2012 年两次被 SearchCloudComputing 杂志提名为年度云计算领导者。
 
@@ -33,7 +33,7 @@ Adrian Cockcroft 毕业于伦敦城市大学，获应用物理和电子学学位
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-3-4.png)
 
-我也预测公有云服务商亚马逊 AWS 和微软 Azure 将会是企业进行服务转移时的安全之选；微软也将加大对 Linux 等开源项目的支持以强化自己独有的软件栈。Leong 的 2014 云计算 Gartner Magic Quadrant 肯定了这一预测，同时也揭示 AWS 已经在公有云市场强化了自己的霸主地位。在部署能力方面，AWS 比所有竞争对手加起来还大 5 倍之多， 2014 年占市场份额为 83%，2015 年增长为 91%。微软位居第二，不过仍领先于 Google 及其他公司。
+我也预测公有云服务商亚马逊 AWS 和微软 Azure 将会是企业进行服务转移时的安全之选；微软也将加大对 Linux 等开源项目的支持以强化自己独有的软件栈。Leong 的 2014 云计算 Gartner Magic Quadrant 肯定了这一预测，同时也揭示 AWS 已经在公有云市场强化了自己的霸主地位。在部署能力方面，AWS 比所有竞争对手加起来还大 5 倍之多，2014 年占市场份额为 83%，2015 年增长为 91%。微软位居第二，不过仍领先于 Google 及其他公司。
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-3-5.png)
 
@@ -47,23 +47,23 @@ Adrian Cockcroft 毕业于伦敦城市大学，获应用物理和电子学学位
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-3-7.jpg)
 
-在「平台即服务（PaaS）」这一部分，在「Docker all the things」的标题下，我指出，PaaS 供应商 Cloud Foundry 一直以自己的市场份额引领业界，但是 Docker 却颠覆了整个 PaaS 栈。 Docker 提供开放平台供开发者构建、交付并运行分布式应用。 Docker 正通过分解 PaaS 层而持续领导颠覆，高效地把 PaaS 转变为「运行 Docker 容器之所在」。由于担心竞争对手 Docker 不断增加功能，Cloud Foundry 尝试避开与之竞争，转而开发新的容器平台。Docker 已经成功地吸引了各家公司的注意，联合了 PaaS 供应商领导者，共同支持 runC 这一容器平台特性。Docker 将自己的 runC 执行方案贡献给了由 Linux 基金会运营的项目实体。
+在「平台即服务（PaaS）」这一部分，在「Docker all the things」的标题下，我指出，PaaS 供应商 Cloud Foundry 一直以自己的市场份额引领业界，但是 Docker 却颠覆了整个 PaaS 栈。Docker 提供开放平台供开发者构建、交付并运行分布式应用。Docker 正通过分解 PaaS 层而持续领导颠覆，高效地把 PaaS 转变为「运行 Docker 容器之所在」。由于担心竞争对手 Docker 不断增加功能，Cloud Foundry 尝试避开与之竞争，转而开发新的容器平台。Docker 已经成功地吸引了各家公司的注意，联合了 PaaS 供应商领导者，共同支持 runC 这一容器平台特性。Docker 将自己的 runC 执行方案贡献给了由 Linux 基金会运营的项目实体。
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-3-8.png)
 
 在数据中心这一战场，去年 VMware 感受到了诸如 Docker 和 Openstack 这些低开销但更为自动化的竞争者的威胁。我也强调了 Mesos，这个集群管理工具能够简化服务器共享池里运行任务的复杂度，在可扩展性和面相开发者方面对 Openstack 构成威胁。作为回应，VMware 在自己的工具中引入 Docker，同时发布了 Photon，一款针对 Docker 进行优化的 Linux 发行版。同时，他们还实现秒级创建虚拟机，提升打包容器的安全性，与别的虚拟机技术相比，实现了最小化。借助 VMware 庞大稳定的生态系统，这种对 Docker 技术的优化，提升了他们的企业接受度。正是基于颠覆自身，VMware 在博弈中取胜，并且将在长期保持。
 
-开源云计算软件 Openstack 正在日渐成熟，尽管少于预期规模，但仍成为诸多新数据中心部署时的首选环境。我曾预测 Openstack 生态系统将会由诸如 Cisco、HP、IBM 和 Oracle 这样的大型企业级厂商主导。确实在过去的一年，许多 OpenStack 及相关基于云的创业公司在市场上苦苦挣扎，最后被巨头收购。Cloudscaling 被 EMC 收购，Metacloud 和 Piston Cloud 被 Cisco 收购，Nebula 的团队被 Oracle 雇佣，Bluebox 被 IBM 收购，Eucalyptus 被 HP 收购， eNovance 和 Inktank 被 RedHat 收购。**唯一**屹立不倒的是 Mirantis ，这家云计算服务公司创造了成功的商业模式，帮助各种机构正确安装 Openstack ，确保其正常运行。从技术的角度看， Openstack 存在诸多难题：太晚才添加面向开发者的功能， Neutron 的软件定义网络的项目扩大了问题规模。
+开源云计算软件 Openstack 正在日渐成熟，尽管少于预期规模，但仍成为诸多新数据中心部署时的首选环境。我曾预测 Openstack 生态系统将会由诸如 Cisco、HP、IBM 和 Oracle 这样的大型企业级厂商主导。确实在过去的一年，许多 OpenStack 及相关基于云的创业公司在市场上苦苦挣扎，最后被巨头收购。Cloudscaling 被 EMC 收购，Metacloud 和 Piston Cloud 被 Cisco 收购，Nebula 的团队被 Oracle 雇佣，Bluebox 被 IBM 收购，Eucalyptus 被 HP 收购，eNovance 和 Inktank 被 RedHat 收购。**唯一**屹立不倒的是 Mirantis，这家云计算服务公司创造了成功的商业模式，帮助各种机构正确安装 Openstack，确保其正常运行。从技术的角度看，Openstack 存在诸多难题：太晚才添加面向开发者的功能，Neutron 的软件定义网络的项目扩大了问题规模。
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-3-9.png)
 
-在可扩展的数据中心部署方面，Mesos 是当前赢家。而来自 Google 的竞争对手 Kubernetes 对于更小安装也有兴趣，可以作为 Docker 运行时而成为 Openstack 之上有用的一层。Mesos 已经被 Twitter、AirBnB 和其它公司用于生产，证明自己能够用来创建大型的私有云环境。提供 Mesos 的 Mesophere 公司也在 2015 年初将自己的数据中心操作系统（ DCOS ）从 beta 版升级到生产级。
+在可扩展的数据中心部署方面，Mesos 是当前赢家。而来自 Google 的竞争对手 Kubernetes 对于更小安装也有兴趣，可以作为 Docker 运行时而成为 Openstack 之上有用的一层。Mesos 已经被 Twitter、AirBnB 和其它公司用于生产，证明自己能够用来创建大型的私有云环境。提供 Mesos 的 Mesophere 公司也在 2015 年初将自己的数据中心操作系统（DCOS）从 beta 版升级到生产级。
 
 Docker 对公有云环境的支持也日趋成熟；AWS 提供了类 Mesos 的 EC2 Container Service（EC2 容器服务，简称 ECS）；Azure 除了支持基于 Linux 的 Docker 容器技术，还开发自己的基于 Windows 的容器技术；Google 推出了基于 Kubernetes 的 Google Kontainer Service；而 Digital Ocean 则与 Mesosphere 合作。
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-3-10.jpg)
 
-在应用层面，我在去年指出软件即服务（SaaS）将随着应用的标准化交付模型而被接受。除了企业采用，SaaS 也迅速波及全球厂商。厂商们发现他们再也无需在每个市场提供驻场安装和支持团队。SaaS 的价值实际远远大于云基础设施的价值。 Salesforce 和 Workday 这样的大型 SaaS 厂商继续走强，风投们对 SaaS 服务提供商的投资也持续加大，许多大型企业级厂商正在快速迁移到 SaaS。Azure 的很大一部分就是用来支持包括 Office 365 在内的 Microsoft 的 SaaS 产品。 IBM 已经整合了对 Softlayer 的收购，用来支持公司的 SaaS 服务。Oracle 和 HP 正在构建云服务去支持各自的 SaaS 应用业务。这也让这些厂商们宣称「云收入」的巨大，尽管与 AWS 相比，他们部署的 IaaS 体量不过九牛一毛。
+在应用层面，我在去年指出软件即服务（SaaS）将随着应用的标准化交付模型而被接受。除了企业采用，SaaS 也迅速波及全球厂商。厂商们发现他们再也无需在每个市场提供驻场安装和支持团队。SaaS 的价值实际远远大于云基础设施的价值。Salesforce 和 Workday 这样的大型 SaaS 厂商继续走强，风投们对 SaaS 服务提供商的投资也持续加大，许多大型企业级厂商正在快速迁移到 SaaS。Azure 的很大一部分就是用来支持包括 Office 365 在内的 Microsoft 的 SaaS 产品。IBM 已经整合了对 Softlayer 的收购，用来支持公司的 SaaS 服务。Oracle 和 HP 正在构建云服务去支持各自的 SaaS 应用业务。这也让这些厂商们宣称「云收入」的巨大，尽管与 AWS 相比，他们部署的 IaaS 体量不过九牛一毛。
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-3-11.png)
 
@@ -75,8 +75,8 @@ Docker 对公有云环境的支持也日趋成熟；AWS 提供了类 Mesos 的 E
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-3-13.jpg)
 
-审视云技术的未来，除了上文提及的趋势，新趋势也崭露头角 AWS、Azure 和 Google Cloud 的功能在数据中心的功能中交叉使用，而不是像以往那样被用作子集。实际上，如果你希望创建一个靠谱的数据中心，你可以马上在公有云环境中创建，能够弹性扩展、高性能。缺点是它不方便 IT 专家使用公有云厂家提供的各种新功能进行维护。Digital Ocean 却是个例外，他们以简单易用、功能精简为特色。像 AWS re:Invent（亚马逊 AWS 年度用户大会）这样的活动很快就增加了培训和认证的环节。
+审视云技术的未来，除了上文提及的趋势，新趋势也崭露头角 AWS、Azure 和 Google Cloud 的功能在数据中心的功能中交叉使用，而不是像以往那样被用作子集。实际上，如果你希望创建一个靠谱的数据中心，你可以马上在公有云环境中创建，能够弹性扩展、高性能。缺点是它不方便 IT 专家使用公有云厂家提供的各种新功能进行维护。Digital Ocean 却是个例外，他们以简单易用、功能精简为特色。像 AWS re：Invent（亚马逊 AWS 年度用户大会）这样的活动很快就增加了培训和认证的环节。
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-3-14.png)
 
-最后，对我而言，去年最让我感兴趣的新技术是 AWS Lambda。这是一个高安全、事件驱动的技术模型，能够针对每个事件进程创建新容器。数据变化会生成事件，从而创建一个菊花链网络拓扑，执行业务进程。对于 Lambda，AWS 以十分之一秒为单位、按照容器运行时间收费，每个月可免费请求一百万次。如果你想起黑客们是如何侵入 IT 系统的，就能明白以秒为单位的服务真的是门精妙的技术。配合 AWS 身份和进程管理功能（AWS identity and access management，简称 IAM ）和安全密钥管理服务，数据的每个交互和环节都能被控制、加密和审计。我相信这一模型最终会成为管理至关重要的数据的最佳实践。随着不断有数据中心被侵入，越来越多的人会意识到精品级的、高安全系统应该使用云计算来构建。
+最后，对我而言，去年最让我感兴趣的新技术是 AWS Lambda。这是一个高安全、事件驱动的技术模型，能够针对每个事件进程创建新容器。数据变化会生成事件，从而创建一个菊花链网络拓扑，执行业务进程。对于 Lambda，AWS 以十分之一秒为单位、按照容器运行时间收费，每个月可免费请求一百万次。如果你想起黑客们是如何侵入 IT 系统的，就能明白以秒为单位的服务真的是门精妙的技术。配合 AWS 身份和进程管理功能（AWS identity and access management，简称 IAM）和安全密钥管理服务，数据的每个交互和环节都能被控制、加密和审计。我相信这一模型最终会成为管理至关重要的数据的最佳实践。随着不断有数据中心被侵入，越来越多的人会意识到精品级的、高安全系统应该使用云计算来构建。
