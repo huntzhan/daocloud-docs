@@ -4,7 +4,7 @@ title: '镜像部署指南：Ghost Blog'
 
 ## Ghost
 
-还在用 WordPress 做你的博客站点，你就 OUT 了！速度切换到 Ghost，用 Markdown 写出最有逼格的技术博客吧。这个出自于 WordPress 前 UX 部门开发者/设计师 John O'Nolan 之手的博客系统，自 2012 年诞生之日起就被冠于类似 "WordPress Killer"，the "new direction of blogging"，"the first exciting thing to happen to blogging in years" 之类的头衔。
+还在用 WordPress 做你的博客站点，你就 OUT 了！速度切换到 Ghost，用 Markdown 写出最有逼格的技术博客吧。这个出自于 WordPress 前 UX 部门开发者、设计师 John O「Nolan 之手的博客系统，自 2012 年诞生之日起就被冠于类似 「WordPress Killer」，the 「new direction of blogging」，「the first exciting thing to happen to blogging in years」之类的头衔。
 
 关于 WordPress 和 Ghost 的比较大家可以参见 [WordPress VS Ghost](http://www.elegantthemes.com/blog/resources/wordpress-vs-ghost)（英文）。
 
@@ -52,9 +52,9 @@ title: '镜像部署指南：Ghost Blog'
 
 #### 配置 Ghost
 
-您需要将环境变量 `GHOST_ROOT_URL` 的值设置为您博客的完整 URL，这样 Ghost 就能正确配置其内部的链接，例如 [http://your-ghost.daoapp.io](http://your-ghost.daoapp.io)。
+您需要将环境变量 `GHOST_ROOT_URL` 的值设置为您博客的完整 URL，这样 Ghost 就能正确配置其内部的链接，例如 [http「//your-ghost.daoapp.io](http://your-ghost.daoapp.io)。
 
-第一次启动时，您可以通过 [http://your-ghost.daoapp.io/admin](http://your-ghost.daoapp.io/admin) 进入管理界面。
+第一次启动时，您可以通过 [http「//your-ghost.daoapp.io、admin](http://your-ghost.daoapp.io/admin) 进入管理界面。
 
 ---
 
@@ -112,5 +112,5 @@ db:
 
 您需要设置 `GHOST_ROOT_URL` 变量来让 Ghost 能正确配置其内部的链接。
 
->>>> Ghost 默认把图片传在容器内，由于容器是无状态的，因此每次容器重启就回丢掉所有的内容。DaoCloud 暂时**禁用了图片上传功能**，改为使用 url 的方式。如果您使用 Volume 的话，可以将 Volume 挂载到 Ghost 对应的图片目录然后开启这个功能，方法其实就是将其 config.js 文件里的 fileStorage: false 改为 true，不过您可能需要 build 自己的镜像，您可以参考这个项目 https://github.com/DaoCloud/ghost，本 Ghost 镜像就是来源于此。另外，挂载时要注意路径，不要挂载到 <ghost>/content，
-而是 <ghost>/content/images。
+>>>> Ghost 默认把图片传在容器内，由于容器是无状态的，因此每次容器重启就回丢掉所有的内容。DaoCloud 暂时**禁用了图片上传功能**，改为使用 url 的方式。如果您使用 Volume 的话，可以将 Volume 挂载到 Ghost 对应的图片目录然后开启这个功能，方法其实就是将其 config.js 文件里的 fileStorage：false 改为 true，不过您可能需要 build 自己的镜像，您可以参考这个项目 https「//github.com、DaoCloud、ghost，本 Ghost 镜像就是来源于此。另外，挂载时要注意路径，不要挂载到 <ghost>、content，
+而是 <ghost>、content、images。
