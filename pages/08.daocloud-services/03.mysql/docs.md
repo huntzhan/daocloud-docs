@@ -7,7 +7,7 @@ taxonomy:
 
 #### 什么是 MySQL
 
-MySQL 是一种开放源代码的关系型数据库管理系统（RDBMS），MySQL 数据库系统使用最常用的数据库管理语言--结构化查询语言（SQL）进行数据库管理。 MySQL由于其性能高、成本低、可靠性好，已经成为最流行的开源数据库，被广泛地应用在 Internet 上的中小型网站中。随着 MySQL 的不断成熟，它也逐渐用于更多大规模网站和应用，比如维基百科、Google 和 Facebook 等网站。非常流行的开源软件组合 LAMP 中的「M」指的就是 MySQL。
+MySQL 是一种开放源代码的关系型数据库管理系统（RDBMS），MySQL 数据库系统使用最常用的数据库管理语言--结构化查询语言（SQL）进行数据库管理。MySQL 由于其性能高、成本低、可靠性好，已经成为最流行的开源数据库，被广泛地应用在 Internet 上的中小型网站中。随着 MySQL 的不断成熟，它也逐渐用于更多大规模网站和应用，比如维基百科、Google 和 Facebook 等网站。非常流行的开源软件组合 LAMP 中的「M」指的就是 MySQL。
 
 #### 在 DaoCloud 服务集成创建 MySQL 服务
 
@@ -15,11 +15,11 @@ MySQL 是一种开放源代码的关系型数据库管理系统（RDBMS），MyS
 
 ![](image_1.png)
 
-2.在「Dao服务」里选择 MySQL 服务。
+2.在「Dao 服务」里选择 MySQL 服务。
 
 ![](image_2.png)
 
-3.点击 「创建服务实例」。
+3.点击「创建服务实例」。
 
 ![](image_3.png)
 
@@ -37,7 +37,7 @@ MySQL 是一种开放源代码的关系型数据库管理系统（RDBMS），MyS
 
 #### MySQL 与应用绑定
 
-1.选择需要绑定 MySQL 服务的应用，在「应用配置」下的「服务绑定」里选择刚刚创建好的 MySQL 服务。(您可以在创建应用时绑定 MySQL 服务，也可以把 MySQL 服务绑定在现有的应用上)。
+1.选择需要绑定 MySQL 服务的应用，在「应用配置」下的「服务绑定」里选择刚刚创建好的 MySQL 服务。（您可以在创建应用时绑定 MySQL 服务，也可以把 MySQL 服务绑定在现有的应用上）。
 
 ![](image_7.png)
 
@@ -45,7 +45,7 @@ MySQL 是一种开放源代码的关系型数据库管理系统（RDBMS），MyS
 
 ![](image_8.png)
 
-3.如何从代码中读取环境变量呢？下面我们使用 Ruby 语言来展示如何从环境变量里读取连接 MySQL 所需要的信息以及如何连接和操作 MySQL ，具体代码（完整的 Docker 镜像请前往 [GitHub](https://github.com/yxwzaxns/DaoCloud_MySQL.git) ，您可以 fork 到自己的项目里运行这个例子）
+3.如何从代码中读取环境变量呢？下面我们使用 Ruby 语言来展示如何从环境变量里读取连接 MySQL 所需要的信息以及如何连接和操作 MySQL，具体代码（完整的 Docker 镜像请前往 [GitHub](https://github.com/yxwzaxns/DaoCloud_MySQL.git)，您可以 fork 到自己的项目里运行这个例子）
 
 ```ruby
 require 'sinatra'
@@ -60,30 +60,30 @@ module Sinatra
 end
 
 get '/' do
-    body 		"Welcome,this is a info about MySQL:
-    host:		#{ENV['MYSQL_PORT_3306_TCP_ADDR']}
-    username:	#{ENV['MYSQL_USERNAME']}
-    password:	#{ENV['MYSQL_PASSWORD']}
-    port:		#{ENV['MYSQL_PORT_3306_TCP_PORT']}
-    database:	#{ENV['MYSQL_INSTANCE_NAME']}"
+    body         "Welcome,this is a info about MySQL:
+    host:        #{ENV['MYSQL_PORT_3306_TCP_ADDR']}
+    username:    #{ENV['MYSQL_USERNAME']}
+    password:    #{ENV['MYSQL_PASSWORD']}
+    port:        #{ENV['MYSQL_PORT_3306_TCP_PORT']}
+    database:    #{ENV['MYSQL_INSTANCE_NAME']}"
 end
 
 get '/get/:score' do
-	$storage.populate(params['score'])
+    $storage.populate(params['score'])
 end
 
 get '/get' do
-	"the score is: %d" % $storage.score
+    "the score is: %d" % $storage.score
 end
 
 class Storage
-	def initialize()
-		@db = Mysql2::Client.new(
-                :host => 		ENV['MYSQL_PORT_3306_TCP_ADDR'],
-                :username => 	ENV['MYSQL_USERNAME'],
-                :password => 	ENV['MYSQL_PASSWORD'],
-                :port => 		ENV['MYSQL_PORT_3306_TCP_PORT'],
-                :database => 	ENV['MYSQL_INSTANCE_NAME']
+    def initialize()
+        @db = Mysql2::Client.new(
+                :host =>         ENV['MYSQL_PORT_3306_TCP_ADDR'],
+                :username =>     ENV['MYSQL_USERNAME'],
+                :password =>     ENV['MYSQL_PASSWORD'],
+                :port =>         ENV['MYSQL_PORT_3306_TCP_PORT'],
+                :database =>     ENV['MYSQL_INSTANCE_NAME']
          )
          @db.query("CREATE TABLE IF NOT EXISTS scores(score INT)")
          end
@@ -110,7 +110,7 @@ $storage = Storage.new
 
 1.现在关于 MySQL 服务的管理工具有很多，DaoCloud 本身在 MySQL 服务里就集成了著名的 phpMyAdmin 管理工具。
 
-+ 点击「服务集成」->「我的服务」选择对应的 MySQL 服务。
++ 点击「服务集成」-》「我的服务」选择对应的 MySQL 服务。
 
 ![](image_1.png)
 
@@ -122,7 +122,7 @@ $storage = Storage.new
 
 2.您也可以用 DaoCloud 官方提供的 phpMyAdmin 镜像来创建自己的 MySQL 管理工具。
 
-+ 进入 DaoCloud 镜像仓库，选择 「DaoCloud镜像」下的 phpMyAdmin 镜像，点击「部署最新版本」。
++ 进入 DaoCloud 镜像仓库，选择「DaoCloud 镜像」下的 phpMyAdmin 镜像，点击「部署最新版本」。
 
 ![](image_12.png)
 ![](image_13.png)
