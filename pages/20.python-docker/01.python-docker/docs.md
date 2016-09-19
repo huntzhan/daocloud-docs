@@ -21,7 +21,7 @@ Guido van Rossum，荷兰人。在这个诞生了梵高和克鲁伊夫的国家�
 
 ##### Python 是什么的缩写？
 
-不是缩写。因为作者 Guido 当时在看一部叫「Monty Python's Flying Circus」的英国腐剧，因此得名。
+不是缩写。因为作者 Guido 当时在看一部叫「Monty Python「s Flying Circus」的英国腐剧，因此得名。
 
 ##### Python 最著名的版本？
 
@@ -45,7 +45,7 @@ Guido，Python 的神和独裁者。
 
 ##### Python 的包依赖怎么做？
 
-pip（Python Package Index）
+pip( Python Package Index) 
 
 ##### Python 的单元测试怎么做？
 
@@ -69,7 +69,7 @@ Ruby 对以上两点持保留意见。
 
 ##### 那怎么破的，能教教吗？
 
-上 Docker!
+上 Docker！
 
 欢迎进入由 DaoCloud 推出的「Docker 开发大礼包」第二季「Python 应用 Docker 开发大礼包」，四篇由浅入深、精心设计的系列文章，将带领 Python 开发者领略 Docker 化应用开发和发布的全新体验。
 
