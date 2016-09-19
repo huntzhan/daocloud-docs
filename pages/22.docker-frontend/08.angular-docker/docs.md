@@ -45,7 +45,7 @@ title: 'Angular 应用 Docker 启动加速'
 
 **接着，我们修改 `/gulp/env.js` 文件，将 `env:config` 默认配置设置成 `needReplace`**。
 
-添加 `env:replace` task ，将 `cdn` task 作为前置条件
+添加 `env:replace` task，将 `cdn` task 作为前置条件
 
 ```
 gulp.task('env:config', function () {
@@ -123,7 +123,7 @@ RUN gulp build
 CMD gulp env:replace && cp -r dist/* /usr/share/nginx/html/ && nginx -g 'daemon off;'
 ```
 
-有了 Dockerfile 以后，我们可以运行下面的命令构建前端镜像并命名为 my-angular-app：
+有了 Dockerfile 以后，我们可以运行下面的命令构建前端镜像并命名为 my-angular-App：
 
 ```bash
 docker build -t my-angular-app .
