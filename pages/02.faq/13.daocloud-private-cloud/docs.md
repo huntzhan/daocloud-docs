@@ -10,7 +10,7 @@ taxonomy:
 #### DaoCloud 私有版
 
 DaoCloud 为大型企业客户提供全形态私有化部署，在 DaoShip、DaoHub、DaoCloud 等产品的形态基础之上，提供如下企业级功能：
- 
+
 + 应用与数据的云平台
 + 弹性的容器应用管理
 + 全语言与技术栈支持
