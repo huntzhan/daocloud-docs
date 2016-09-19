@@ -7,7 +7,7 @@ taxonomy:
 
 <!-- reviewed by fiona -->
 
-## Dockerfile最佳实践
+## Dockerfile 最佳实践
 
 与使用的其他任何应用程序一样，总会有可以遵循的最佳实践。你可以阅读更多有关 Dockerfile 的最佳实践。以下是我们列出的基本的 Dockerfile 最佳实践：
 
