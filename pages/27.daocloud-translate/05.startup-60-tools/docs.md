@@ -49,10 +49,10 @@ Rob Fitzpatrick，连续创业的企业家，YCombinator 学员，The Mom Test �
 ### 支付类
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-4-5.jpg)
 
-- Square（美国）/ iZettle（其它地区）：通过手机进行信用卡支付，适用于市场商户和承包人
+- Square（美国）、iZettle（其它地区）：通过手机进行信用卡支付，适用于市场商户和承包人
 - Stripe：最好的支付处理工具
 - GoCardless（英国）：接受直接的借记卡支付
-- Gumroad：方便地出售数字文件，比如 PDF 、视频和链接等
+- Gumroad：方便地出售数字文件，比如 PDF、视频和链接等
 
 ### 分析类
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-4-6.jpg)
@@ -67,14 +67,14 @@ Rob Fitzpatrick，连续创业的企业家，YCombinator 学员，The Mom Test �
 - Createspace：上传 PDF 文档，即可通过亚马逊售卖实体书
 - Newspaper Club：印刷自己的报纸
 - The Game Crafter：制造产品原型，也可以售卖自己的卡牌游戏
-- Shapeways：高质量的 3D 打印，多种原材料可选，包括金和银（用于珠宝首饰）、陶土（用于日用品），非常适合制造产品原型或用于试水市场的产品实物
+- Shapeways：高质量的 3 D 打印，多种原材料可选，包括金和银（用于珠宝首饰）、陶土（用于日用品），非常适合制造产品原型或用于试水市场的产品实物
 - Alibaba：消除中间商，直接从制造商那里购买自己需要的任何东西。如果希望购买能装满 40 英尺集装箱的卡丁车，那 Alibaba 是你的不二之选。
 
 ### 建站工具类
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-4-8.jpg)
 
 - Squarespace：可视化建站工具，提供出色的主题，整合了商店、支付、邮件订阅等
-- Strikingly：简单的建站工具，特别适合单页面站点，比如 manifestos、个人/公司介绍页，以及加载页
+- Strikingly：简单的建站工具，特别适合单页面站点，比如 manifestos、个人、公司介绍页，以及加载页
 - Shopify：特别针对电子商务和在线商店
 - Themeforest：如果希望定制化，则可以购买价值 30 美元的主题进行编辑和优化
 
@@ -83,7 +83,7 @@ Rob Fitzpatrick，连续创业的企业家，YCombinator 学员，The Mom Test �
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-4-9.jpg)
 
 - Glyphicons：成系列的 icon 图片
-- 500px：大量高质量照片
+- 500 px：大量高质量照片
 - Flickr Creative commons：标注使用权限的图片搜索
 - Subtle Patterns：背景和纹理工具
 
@@ -91,7 +91,7 @@ Rob Fitzpatrick，连续创业的企业家，YCombinator 学员，The Mom Test �
 ### 人力
 
 - Fiverr：发布从 logo 设计到文案写作等各种任务，仅需 5 美元或以上
-- 99designs：仅需几百白金即可众包设计任务，主要是 logo 设计
+- 99 designs：仅需几百白金即可众包设计任务，主要是 logo 设计
 - elance：各种类型的自由职业者，在找到适合职位的人之前，可用来招募人员完成实验项目
 - Clarity.fm：按分钟支付酬劳，听取来自不同创业专家的建议
 - Dribbble：浏览设计师的个人简历和作品，多为自由职业者
@@ -112,9 +112,9 @@ Rob Fitzpatrick，连续创业的企业家，YCombinator 学员，The Mom Test �
 ### 学习类
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-4-12.jpg)
 
-- Paul Graham’s Essays：可以阅读全部存档文章
+- Paul Graham」s Essays：可以阅读全部存档文章
 - Tropical MBA：250 个优质播客，内容涵盖 location independence 和制造业
-- Seth Godin’s Startup School：15 个音频文件，覆盖 Seth 的创业心得
+- Seth Godin」s Startup School：15 个音频文件，覆盖 Seth 的创业心得
 - Moz Learn：关于 inbound marketing 的干货
 
 ### 新闻类
@@ -126,7 +126,7 @@ Rob Fitzpatrick，连续创业的企业家，YCombinator 学员，The Mom Test �
 ### 投资人相关
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-4-14.png)
 
-- f6s：所有加速器计划列表及其它信息，初创公司和天使投资人的社交网络
+- f6 s：所有加速器计划列表及其它信息，初创公司和天使投资人的社交网络
 - AngelList：初创公司和天使投资人的社交网络、投融资平台
 - Capitallist：与 Angellist 类似，重点关注伦敦和英国
 - The Funded：从创始人的视角对投资人进行评价和推荐
