@@ -10,7 +10,7 @@ taxonomy:
 ![](DashboardDaoCloud1.png)
 
 1. 查看镜像概览，这个概览的内容，来自您在代码仓库中的 Readme 文件，支持 markdown 格式。我们建议您在此写明镜像的介绍信息，和部署运行时的注意事项，便于团队内部其他成员知晓和协作。
-2. 查看镜像版本，DaoCloud 将确保您在代码仓库每一次打 tag，我们都会完成一次镜像构建，这里列出了包括master-init在内的所有镜像历史版本
+2. 查看镜像版本，DaoCloud 将确保您在代码仓库每一次打 tag，我们都会完成一次镜像构建，这里列出了包括 master-init 在内的所有镜像历史版本
 3. 在版本 tab，您还可以拉取镜像，部署镜像，把选定版本设置为 latest，或删除镜像
 4. 设置 tab，提供了镜像改名的功能
 
@@ -40,11 +40,11 @@ docker pull daocloud.io/[你的 DaoCloud ID]/［镜像名称］:［Tag］
 ```shell
 ＃ docker images
 
-REPOSITORY	TAG	IMAGE ID	CREATED	VIRTUAL SIZE
-ubuntu	13.10	9f676bd305a4	5 weeks ago	178 MB
-ubuntu	saucy	9f676bd305a4	5 weeks ago	178 MB
-ubuntu	raring	eb601b8965b8	5 weeks ago	166.5 MB
-ubuntu	13.04	eb601b8965b8	5 weeks ago	166.5 MB
+REPOSITORY    TAG    IMAGE ID    CREATED    VIRTUAL SIZE
+ubuntu    13.10    9f676bd305a4    5 weeks ago    178 MB
+ubuntu    saucy    9f676bd305a4    5 weeks ago    178 MB
+ubuntu    raring    eb601b8965b8    5 weeks ago    166.5 MB
+ubuntu    13.04    eb601b8965b8    5 weeks ago    166.5 MB
 
 # docker tag 9f676bd305a4 daocloud.io/[ID]ubuntu
 
