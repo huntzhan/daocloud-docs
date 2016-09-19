@@ -6,7 +6,7 @@ title: '一图看尽 docker 容器文件系统'
 
 >**「Allen 谈 Docker 系列」**
 
->DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
+>DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
 ---
 
@@ -66,7 +66,7 @@ CMD ["./run.sh"]
 
 这两层分别为 Docker 容器的初始层（Init Layer）与可读写层（Read-Write Layer），初始层中大多是初始化容器环境时，与容器相关的环境信息，如容器主机名，主机 host 信息以及域名服务文件等。
 
-再来看可读写层，这一层的作用非常大，Docker 的镜像层以及顶上的两层加起来，Docker 容器内的进程只对可读写层拥有写权限，其他层对进程而言都是只读的（Read-Only）。如 AUFS 等文件系统下，写下层镜像内容即会涉及 `COW` （Copy-on-Write）技术。另外，关于 `VOLUME` 以及容器的 `hosts`、`hostname`、`resolv.conf` 文件等都会挂载到这里。需要额外注意的是，虽然 Docker 容器有能力在可读写层看到 `VOLUME` 以及 `hosts` 文件等内容，但那都仅仅是挂载点，真实内容位于宿主机上。
+再来看可读写层，这一层的作用非常大，Docker 的镜像层以及顶上的两层加起来，Docker 容器内的进程只对可读写层拥有写权限，其他层对进程而言都是只读的（Read-Only）。如 AUFS 等文件系统下，写下层镜像内容即会涉及`COW` （Copy-on-Write）技术。另外，关于 `VOLUME` 以及容器的 `hosts`、`hostname`、`resolv.conf`文件等都会挂载到这里。需要额外注意的是，虽然 Docker 容器有能力在可读写层看到 `VOLUME` 以及 `hosts` 文件等内容，但那都仅仅是挂载点，真实内容位于宿主机上。
 
 ## 总结
 
