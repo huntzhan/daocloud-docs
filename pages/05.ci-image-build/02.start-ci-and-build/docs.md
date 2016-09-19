@@ -14,7 +14,7 @@ process:
 完整的 CI 流程
 daocloud.yml（细节在后面的daocloud.yml单独讲）
 触发的方式 
-	git commit
+    git commit
     手工重新执行
     触发配置界面
 ci 的 log 窗口
@@ -33,8 +33,8 @@ CI的作用：
 dockerfile
 触发的方式：
 
-	添加新项目时的首次init build（默认是 master 分支）
-	git tag commit（所有分支都会触发）
+    添加新项目时的首次init build（默认是 master 分支）
+    git tag commit（所有分支都会触发）
     手动构建（可以选择代码分支，但是code是基于上次自动构建的 commit 版本）
     触发配置界面
 build 的 log 窗口
