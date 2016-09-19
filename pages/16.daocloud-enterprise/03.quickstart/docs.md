@@ -2,9 +2,9 @@
 title: 快速开始
 ---
 
-DCE 提供了一整套安装套件。你可以在 10 分钟之内安装 DaoCloud Enterprise (DCE)。 
+DCE 提供了一整套安装套件。你可以在 10 分钟之内安装 DaoCloud Enterprise （DCE）。 
 
-这个页面将帮助你在 DaoCloud 胶囊主机上快速安装一套简单的 DaoCloud Enterprise (DCE) ，并使用 DCE 控制台部署你的应用。如果你对胶囊主机不熟悉，你可以查看[添加胶囊主机](http://docs.daocloud.io/cluster-mgmt/add-cell-node)来了解胶囊主机的申请和使用。
+这个页面将帮助你在 DaoCloud 胶囊主机上快速安装一套简单的 DaoCloud Enterprise （DCE），并使用 DCE 控制台部署你的应用。如果你对胶囊主机不熟悉，你可以查看[添加胶囊主机](http://docs.daocloud.io/cluster-mgmt/add-cell-node)来了解胶囊主机的申请和使用。
 
 如果你熟悉 DCE 和 Docker，你可以直接前往[应用部署](http://guide.daocloud.io/dce/部署应用-3998551.html)查看更详细的 DCE 安装与部署方案。 
 
