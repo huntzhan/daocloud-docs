@@ -22,12 +22,12 @@ process:
 为了帮助开发者快速上手，体验 Docker 和 DaoCloud 带来的便利性，我们针对各种开发语言和后台服务，编写了大量的示例程序。这些程序包含了基本的代码、数据库访问、Dockerfile 和用于在 DaoCloud 平台上使用持续集成的 daocloud.yml 文件。在这些示例的基础上，您可以快速为您的项目添加 Dockerfile 和 daocloud.yml。DaoCloud 在 GitHub 的公有仓库分享了所有这些示例程序，我们为您列表如下：
 
 ##### 基础开发环境
-+ Python ＋ IPython 开发环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/python-ipython-notebook) 
++ Python＋IPython 开发环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/python-ipython-notebook) 
 + Python 开发环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/python-sample-base-image)  
 + Django 开发环境，包括 Dockerfile 和 compose 文件，[Fork 项目 ](https://github.com/DaoCloud/python-django-sample)
 + Django 开发环境和持续集成，包括 Dockerfile、compose 文件和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/python-django-cd-sample)
 + PHP 开发环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-sample) 
-+ PHP ＋ Apache 基础运行环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-apache-image) 
++ PHP＋Apache 基础运行环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-apache-image) 
 
 ##### 基础数据服务和工具
 + PHPMyAdmin 数据库管理工具，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/phpmyadmin/blob/master/Dockerfile) 
@@ -38,18 +38,18 @@ process:
 + MongoDB 服务器，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/dao-mongodb)
 
 ##### 包含数据访问、性能监控或持续集成测试用例的复杂应用
-+ Python ＋ MySQL，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/python-mysql-sample) 
-+ Golang ＋ Mongo，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/golang-mongo-sample) 
-+ Golang ＋ MySQL，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/golang-mysql-sample) 
-+ Golang ＋ Redis，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/golang-redis-sample) 
-+ PHP ＋ Laravel ＋ MySQL 示例项目，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/php-laravel-mysql-sample) 
-+ PHP ＋ Apache ＋ MySQL 运行环境，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/php-apache-mysql-sample)
-+ PHP ＋ New Relic 监控，包括代码和Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-newrelic-sample)
-+ PHP ＋ 透视宝监控，包括代码和 Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-toushibao-sample)
-+ NodeJS ＋ MongoDB 开发示例，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/node-mongo-sample)
-+ Golang ＋ InfluxDB 开发示例，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/golang-influxdb-sample)
-+ Ruby ＋ MySQL 开发示例，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/ruby-mysql-sample)
-+ Python ＋ Redis 开发示例，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/python-redis-sample)
++ Python＋MySQL，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/python-mysql-sample) 
++ Golang＋Mongo，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/golang-mongo-sample) 
++ Golang＋MySQL，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/golang-mysql-sample) 
++ Golang＋Redis，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/golang-redis-sample) 
++ PHP＋Laravel＋MySQL 示例项目，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/php-laravel-mysql-sample) 
++ PHP＋Apache＋MySQL 运行环境，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/php-apache-mysql-sample)
++ PHP＋New Relic 监控，包括代码和 Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-newrelic-sample)
++ PHP＋透视宝监控，包括代码和 Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-toushibao-sample)
++ NodeJS＋MongoDB 开发示例，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/node-mongo-sample)
++ Golang＋InfluxDB 开发示例，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/golang-influxdb-sample)
++ Ruby＋MySQL 开发示例，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/ruby-mysql-sample)
++ Python＋Redis 开发示例，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/python-redis-sample)
 
 ##### 其他
 + 2048 页面游戏，包括代码和 Dockerfile，[Fork 项目 ](https://github.com/DaoCloud/dao-2048)
