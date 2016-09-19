@@ -6,7 +6,7 @@ title: '如何构建具有持续交付能力的 Docker 化 Django 应用'
 
 > 目标：我们将之前实现的 **Django + MySQL + Redis** 留言板应用，送上云端，轻松实现应用在云端持续交付。
 > 
-> 本项目代码维护在 **[DaoCloud/python-django-cd-sample](https://github.com/DaoCloud/python-django-cd-sample)** 项目中。
+> 本项目代码维护在 **[DaoCloud、python-django-cd-sample](https://github.com/DaoCloud/python-django-cd-sample)** 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 
@@ -29,7 +29,7 @@ title: '如何构建具有持续交付能力的 Docker 化 Django 应用'
 - 第零步：在控制台点击「服务集成」，创建 MySQL 和 Redis 服务
 - 第一步：在控制台点击「镜像仓库」。
 - 第二步：在「代码构建」的界面中找到需要部署的镜像，点击「部署」。
-- 第三步：按照为项目指定「项目名称」，并在 「基础设置」中绑定上 MySQL 和 Redis 服务。
+- 第三步：按照为项目指定「项目名称」，并在「基础设置」中绑定上 MySQL 和 Redis 服务。
 
 如果没有意外的话，您的应用便在云端航行起来咯！
 
