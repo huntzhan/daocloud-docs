@@ -16,7 +16,7 @@ Rasmus Lerdorf 在 1994 年创造了 PHP，Andi Gutmans 和 Zeev Suraski 于 199
 
 ##### PHP 是什么的缩写？
 
-起先的意思直白的有点近乎粗鲁「Personal Home Page」，后来改成了「PHP: Hypertext Preprocessor」即便用今天的眼光看也是很酷炫的命名。
+起先的意思直白的有点近乎粗鲁「Personal Home Page」，后来改成了「PHP：Hypertext Preprocessor」即便用今天的眼光看也是很酷炫的命名。
 
 ##### PHP 最著名的版本？
 
@@ -36,7 +36,7 @@ PHP Group 来维护其标准，Zend 作为商业公司提供参考实现。
 
 ##### HHVM 又是什么？
 
-HipHop Virtual Machine (HHVM) 是 Facebook 对 PHP 的一次革命性衍进。HHVM 采用实时编译进程，使得 PHP 的执行效率大幅提升。Facebook 在 2013 年全面采用 HHVM 运行 PHP，间接拉升了 PHP 生态的逼格，激发了整个 PHPer 群体的活力。
+HipHop Virtual Machine （HHVM）是 Facebook 对 PHP 的一次革命性衍进。HHVM 采用实时编译进程，使得 PHP 的执行效率大幅提升。Facebook 在 2013 年全面采用 HHVM 运行 PHP，间接拉升了 PHP 生态的逼格，激发了整个 PHPer 群体的活力。
 
 ##### PHP 的包依赖怎么做？
 
