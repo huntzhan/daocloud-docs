@@ -4,7 +4,7 @@ title: 'Docker 环境下的 Spring Boot 和 MongoDB 集成'
 
 > 目标：开发一个基于 Spring Boot 和 MongoDB 的应用，使用 MongoDB 记录访问者信息
 > 
-> 本项目代码维护在 **[DaoCloud/docker-demo-java-mongo](https://github.com/DaoCloud/docker-demo-java-mongo)** 项目中。
+> 本项目代码维护在 **[DaoCloud、docker-demo-java-mongo](https://github.com/DaoCloud/docker-demo-java-mongo)** 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 
@@ -23,8 +23,8 @@ title: 'Docker 环境下的 Spring Boot 和 MongoDB 集成'
 编辑 pom.xml 文件，添加如下依赖：
 ```
 <dependency>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-data-mongodb</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-mongodb</artifactId>
 </dependency>
 ```
 
@@ -52,7 +52,7 @@ Date visitDate;
 新建 VisitorRepository 接口，继承 MongoRepository 接口：
 ```java
 public interface VisitorRepository extends MongoRepository<Visitor,String>{
-	
+
 }
 ```
 
@@ -64,18 +64,18 @@ public interface VisitorRepository extends MongoRepository<Visitor,String>{
 ```
 @SpringBootApplication
 public class DockerDemoSpringBootApplication {
-	
+
     @Resource
     VisitorRepository visitorRepository;
-  
+
     public static void main(String[] args) {
         SpringApplication.run(DockerJavaDemoApplication.class, args);
     }
 
-	@RequestMapping("")
-	public String visit(HttpServletRequest request){
-		
-		Visitor visitor = new Visitor();
+    @RequestMapping("")
+    public String visit(HttpServletRequest request){
+
+        Visitor visitor = new Visitor();
         visitor.setId(UUID.randomUUID().toString());
         visitor.setIp(request.getRemoteAddr());
         visitor.setVisitDate(new Date());
@@ -85,7 +85,7 @@ public class DockerDemoSpringBootApplication {
         Long count =  visitorRepository.count();
 
         return String.format("你是来自%s的第%d位访问者。",request.getRemoteAddr(),count);
-	}
+    }
 }
 ```
 
@@ -111,7 +111,7 @@ mongodb:
 - 基于 DaoCloud 提供的 MongoDB 镜像，提供存储服务
 - 通过 links 为 web 关联 mongo 服务
 
-> 如果您需要在 DaoCloud 集成环境中部署您的应用，请保持该配置文件中 links 配置的 MongoDB 服务名称为 `mongodb`,这是 DaoCloud 默认的 MongoDB 服务名称。
+> 如果您需要在 DaoCloud 集成环境中部署您的应用，请保持该配置文件中 links 配置的 MongoDB 服务名称为 `mongodb`，这是 DaoCloud 默认的 MongoDB 服务名称。
 
 ### 启动 Docker Compose，体验服务编排的魅力
 ```
@@ -123,7 +123,7 @@ mongodb:
 http://127.0.0.1:8080
 ```
 
-将会看到 "你是来自127.0.0.1的第1位访问者。"，多次访问后，能看到数字的累加，表示数据已经被持久化到 MongoDB 了，当然，如果要让服务停止后数据仍可以被记录，需要使用 Volume 指令挂载存储，请参阅 **[使用 Volume 实现容器状态持久化](http://docs.daocloud.io/daocloud-services/use-volume)**
+将会看到 「你是来自 127.0.0.1 的第 1 位访问者。」，多次访问后，能看到数字的累加，表示数据已经被持久化到 MongoDB 了，当然，如果要让服务停止后数据仍可以被记录，需要使用 Volume 指令挂载存储，请参阅 **[使用 Volume 实现容器状态持久化](http://docs.daocloud.io/daocloud-services/use-volume)**
 
 #### 致谢
 
