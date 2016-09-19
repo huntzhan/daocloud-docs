@@ -20,13 +20,13 @@ Volume 就是在一个或者多个容器里有特殊用途的目录。它绕过�
 
   ![](volumes_1.png)
 
-2. 点击 「创建 Volume」。
+2. 点击「创建 Volume」。
 
   ![](image_3.png)
 
-3. 输入服务实例名称，为 Volume  选择合适的容量，点击「开始创建」按钮创建 Volume 服务实例
+3. 输入服务实例名称，为 Volume 选择合适的容量，点击「开始创建」按钮创建 Volume 服务实例
 
-  > 每 10G 容量需要消耗 1x 的资源配额
+  > 每 10 G 容量需要消耗 1x 的资源配额
 
   ![](image_4.png)
 
@@ -107,7 +107,7 @@ end
 ```
 
 具体步骤：
-1.  从 [GitHub](https://github.com/yxwzaxns/DaoCloud_volume.git) 上拉取代码在 DaoCloud 里构建镜像，创建应用，并在应用上绑定 Volume 到 /var/vo，因为此时我们绑定的 Volume 里还没有内容，所以访问应用结果如下图显示：
+1.  从 [GitHub](https://github.com/yxwzaxns/DaoCloud_volume.git) 上拉取代码在 DaoCloud 里构建镜像，创建应用，并在应用上绑定 Volume 到 、var、vo，因为此时我们绑定的 Volume 里还没有内容，所以访问应用结果如下图显示：
 
   ![](image_11.png)
 
