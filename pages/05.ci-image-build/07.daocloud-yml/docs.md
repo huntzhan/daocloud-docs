@@ -155,7 +155,7 @@ services:
 
 ##### MySQL
 
-Version：MySQL 5.5
+Version: MySQL 5.5
 
 Docker Link Alias: mysql
 
@@ -165,7 +165,7 @@ Port: 3306
 
 UserName: root
 
-Password: 不设密码
+Password：不设密码
 
 Default Instance: test
 
@@ -179,7 +179,7 @@ Default Instance: test
 
 ##### Redis
 
-Version：Redis 2.8
+Version: Redis 2.8
 
 Docker Link Alias: redis
 
@@ -197,7 +197,7 @@ Port: 6379
 
 ##### MongoDB
 
-Version：MongoDB 2.6
+Version: MongoDB 2.6
 
 Docker Link Alias: mongodb
 
@@ -215,7 +215,7 @@ Port: 27017
 
 ##### RabbitMQ
 
-Version：RabbitMQ 3.6
+Version: RabbitMQ 3.6
 
 Docker Link Alias: rabbitmq
 
@@ -232,7 +232,7 @@ Port: 5672
 
 ##### PostgreSQL
 
-Version：PostgreSQL 9.1
+Version: PostgreSQL 9.1
 
 Docker Link Alias: postgres
 
@@ -240,8 +240,8 @@ Host: postgres
 
 Port: 5432
 
-Username: postgres
-Password: 无
+Username：postgres
+Password：无
 
 环境变量：
 
