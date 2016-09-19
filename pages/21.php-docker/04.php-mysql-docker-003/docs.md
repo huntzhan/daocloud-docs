@@ -4,9 +4,9 @@ title: '如何开发一个 PHP + MySQL 的 Docker 化应用'
 
 <!-- reviewed by fiona -->
 
-> 目标：基于典型的 LAMP 技术栈，用 Docker 镜像的方式搭建一个 Linux + Apache + MySQL + PHP 的应用 。
+> 目标：基于典型的 LAMP 技术栈，用 Docker 镜像的方式搭建一个 Linux + Apache + MySQL + PHP 的应用。
 
->本项目代码维护在 **[DaoCloud/php-apache-mysql-sample](https://github.com/DaoCloud/php-apache-mysql-sample)** 项目中。
+>本项目代码维护在 **[DaoCloud、php-apache-mysql-sample](https://github.com/DaoCloud/php-apache-mysql-sample)** 项目中。
 
 ### 创建 PHP 应用容器
 
@@ -69,7 +69,7 @@ function env($key, $default = null)
 docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d daocloud.io/mysql:5.5
 ```
 
-- 之后，通过 Docker 容器间的 `link` 机制，便可将 MySQL 的默认端口（3306）暴露给应用容器。
+- 之后，通过 Docker 容器间的 `link` 机制，便可将 MySQL 的默认端口 (3306)暴露给应用容器。
 
 ```bash
 docker run --name some-app --link some-mysql:mysql -d app-that-uses-mysql
@@ -79,9 +79,9 @@ docker run --name some-app --link some-mysql:mysql -d app-that-uses-mysql
 
 比起本地创建，在云端创建和绑定 MySQL 数据服务会更简单。
 
-1. 在 GitHub 上 Fork **[DaoCloud/php-apache-mysql-sample](https://github.com/DaoCloud/php-apache-mysql-sample)** 或者添加自己的代码仓库。
+1. 在 GitHub 上 Fork **[DaoCloud、php-apache-mysql-sample](https://github.com/DaoCloud/php-apache-mysql-sample)** 或者添加自己的代码仓库。
 2. 注册成为 DaoCloud 用户。
-3. 在 DaoCloud 「控制台」中选择「代码构建」。
+3. 在 DaoCloud「控制台」中选择「代码构建」。
 4. 创建新项目，选择代码源，开始构建镜像。
 5. 在「服务集成」创建 MySQL 服务实例。
 6. 将构建的应用镜像关联 MySQL 服务实例并部署在云端。
