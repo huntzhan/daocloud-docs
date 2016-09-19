@@ -6,17 +6,17 @@ taxonomy:
 ---
 
 #### 什么是 InfluxDB
-InfluxDB是一个易用性和扩展性非常好的数据库系统，它非常适合适用于性能数据存储，事件以及实时分析等场景。它内置基于HTTP的API接口，为数据存储和查询提供了极大的便利。
+InfluxDB 是一个易用性和扩展性非常好的数据库系统，它非常适合适用于性能数据存储，事件以及实时分析等场景。它内置基于 HTTP 的 API 接口，为数据存储和查询提供了极大的便利。
 #### 在 DaoCloud 服务集成创建 InfluxDB 服务。
 1. 登录 DaoCloud 控制台，选择「服务集成」。
 
   ![](1.png)
 
-2. 在「Dao服务」里选择 InfluxDB 服务。
+2. 在「Dao 服务」里选择 InfluxDB 服务。
 
   ![](2.png)
 
-3. 点击 「创建服务实例」。
+3. 点击「创建服务实例」。
 
   ![](3.png)
 
@@ -45,7 +45,7 @@ InfluxDB是一个易用性和扩展性非常好的数据库系统，它非常适
 
 2. 如何读取环境变量和使用 InfluxDB，下面我们使用 Python 语言来操作 InfluxDB，关键代码如下：
 
- > 完整的 Docker 镜像请前往 [GitHub](https://github.com/DaoCloud/influxdb_sample.git) ，您可以 fork 到自己的项目里运行这个例子
+ > 完整的 Docker 镜像请前往 [GitHub](https://github.com/DaoCloud/influxdb_sample.git)，您可以 fork 到自己的项目里运行这个例子
 
   ```Python
   #!/usr/bin/python
