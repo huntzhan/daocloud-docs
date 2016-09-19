@@ -6,7 +6,7 @@ title: '如何开发一个 Laravel + MySQL 框架的 Docker 化应用'
 
 > 目标：基于主流的 PHP 框架，用 Docker 镜像的方式搭建一个 Laravel + MySQL 的应用。
 
-> 本项目代码维护在 **[DaoCloud/php-laravel-mysql-sample](https://github.com/DaoCloud/php-laravel-mysql-sample)** 项目中。
+> 本项目代码维护在 **[DaoCloud、php-laravel-mysql-sample](https://github.com/DaoCloud/php-laravel-mysql-sample)** 项目中。
 
 ### 创建 Laravel 应用容器
 
@@ -76,7 +76,7 @@ COPY ./composer.lock /app/
 RUN composer install  --no-autoloader --no-scripts
 ```
 
-- 复制 `composer.json` 和 `composer.lock` 到 `/app`，`composer.lock` 会锁定 Composer 加载的依赖包版本号，防止由于第三方依赖包的版本不同导致的应用运行错误。
+- 复制 `composer.json` 和 `composer.lock` 到 `/app`，`composer.lock`会锁定 Composer 加载的依赖包版本号，防止由于第三方依赖包的版本不同导致的应用运行错误。
 - `--no-autoloader` 为了阻止 `composer install` 之后进行的自动加载，防止由于代码不全导致的自动加载报错。
 - `--no-scripts` 为了阻止 `composer install` 运行时 `composer.json` 所定义的脚本，同样是防止代码不全导致的加载错误问题。
 
@@ -128,9 +128,9 @@ docker run --name some-app --link some-mysql:mysql -d app-that-uses-mysql
 
 比起本地创建，在云端创建和绑定 MySQL 数据服务会更简单。 
 
-1. 在 GitHub 上 Fork **[DaoCloud/php-laravel-mysql-sample](https://github.com/DaoCloud/php-laravel-mysql-sample)** 或者添加自己的代码仓库。
+1. 在 GitHub 上 Fork **[DaoCloud、php-laravel-mysql-sample](https://github.com/DaoCloud/php-laravel-mysql-sample)** 或者添加自己的代码仓库。
 2. 注册成为 DaoCloud 用户。
-3. 在 DaoCloud 「控制台」中选择「代码构建」。
+3. 在 DaoCloud「控制台」中选择「代码构建」。
 4. 创建新项目，选择代码源，开始构建镜像。
 5. 在「服务集成」创建 MySQL 服务实例。
 6. 将构建的应用镜像关联 MySQL 服务实例并部署在云端。
