@@ -2,7 +2,7 @@
 title: '完善 DaoVoice 配置'
 ---
 
-### 发事件到DaoVoice
+### 发事件到 DaoVoice
 
 #### 为什么要发事件
 
