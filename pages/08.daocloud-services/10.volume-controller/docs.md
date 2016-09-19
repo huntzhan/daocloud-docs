@@ -29,13 +29,13 @@ Volume 控制台为我们提供了很多关于 Volume 操作的功能，在 Volu
 
   ![](image_5.png)
 
-  > 注意： Volume 选择的路径要与上面变量 GHOST_CONTENT 里的路径一致。
+  > 注意：Volume 选择的路径要与上面变量 GHOST＿CONTENT 里的路径一致。
 
   ![](image_6.png)
 3. 应用成功启动后，我们还需要先修改一些 Ghost 必须参数，比如绑定应用的域名，和必要的 email 功能的配置。这时我们绑定的 Volume 就派上用场了，来到「我的服务」，点击进入对应的 Volume 控制台，您可以看到，Ghost 目录下的 Content 文件夹和 config.js 配置文件出现在这里。打开 config.js 修改里面 production 下的 url 和 mail 选项。
 
   ![](image_4.png)
-4. 修改完毕后，重启应用，访问 **http://your_app_path/ghost/** 设置博客相关信息，我们的博客应用就成功建立了。
+4. 修改完毕后，重启应用，访问 **http「//your＿App＿path、ghost、**设置博客相关信息，我们的博客应用就成功建立了。
 
   ![](image_7.png)
   > 如何更换主题？
