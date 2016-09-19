@@ -83,7 +83,7 @@ COPY . /app/
 CMD gulp build && gulp cdn && cp -r dist/* /usr/share/nginx/html/ && nginx -g 'daemon off;'
 ```
 
-有了 Dockerfile 以后，我们可以运行下面的命令构建前端镜像并命名为 my-angular-cdn-app：
+有了 Dockerfile 以后，我们可以运行下面的命令构建前端镜像并命名为 my-angular-cdn-App：
 
 ```bash
 docker build -t my-angular-cdn-app .
