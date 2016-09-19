@@ -4,7 +4,7 @@ title: '在 Docker 中使用 Java Spring Boot 框架'
 
 > 目标：用 Docker 的方式搭建一个 Java Spring Boot 应用
 > 
-> 本项目代码维护在 **[DaoCloud/docker-demo-spring-boot](https://github.com/DaoCloud/docker-demo-spring-boot)** 项目中。
+> 本项目代码维护在 **[DaoCloud、docker-demo-spring-boot](https://github.com/DaoCloud/docker-demo-spring-boot)** 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 
@@ -19,14 +19,14 @@ Maven 自从公布以来，在 Java 应用构建和管理中一直处于最重�
 
 ### Docker 化应用的关键元素
 * 镜像是 Docker 应用的静态表示，是应用的交付件，镜像中包含了应用运行所需的所有依赖：包括应用代码、应用依赖库、应用运行时和操作系统。
-* Dockerfile 是一个描述文件，描述了产生 Docker 镜像的过程。详细文档请参见 [Dockerfile文档](https://docs.docker.com/reference/builder/)
+* Dockerfile 是一个描述文件，描述了产生 Docker 镜像的过程。详细文档请参见 [Dockerfile 文档](https://docs.docker.com/reference/builder/)
 * 容器是镜像运行时的动态表示，如果把镜像想象为一个 Class 那么容器就是这个 Class 的 instance 实例。
 
 一个应用 Docker 化的第一步就是通过 Dockerfile 产生应用镜像。
 
 ### 创建 Spring Boot 项目
 
-访问 http://start.spring.io 站点，根据需要建立自己的应用。
+访问 http「//start.spring.io 站点，根据需要建立自己的应用。
 
 ![](spring.io.png)
 
@@ -34,7 +34,7 @@ Maven 自从公布以来，在 Java 应用构建和管理中一直处于最重�
 
 现在，我们先建立一个 RESTful API 应用。
 
-所以，我们在 Dependencies 中填写 Web ，然后点击 Generate Project 按钮，将会下载回来一个基于 Maven 的项目模板。
+所以，我们在 Dependencies 中填写 Web，然后点击 Generate Project 按钮，将会下载回来一个基于 Maven 的项目模板。
 
 ### 添加项目代码
 
@@ -53,7 +53,7 @@ public class DockerDemoSpringBootApplication {
         return "Hello! Docker!";
     }
 }
-	
+
 ```
 
 ### 添加 Dockerfile
@@ -74,7 +74,7 @@ RUN cd /tmp/build && mvn -q -DskipTests=true package \
         && mv target/*.jar /app.jar \
         #清理编译痕迹
         && cd / && rm -rf /tmp/build
-		
+
 VOLUME /tmp
 EXPOSE 8080
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
