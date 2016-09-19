@@ -2,15 +2,15 @@
 title: 构建「安全镜像」
 ---
 
-Docker 镜像会将 Dockerfile 中每一步结果保存进其 layer ，如果是从源码构建镜像的话会将代码留在镜像中。为了解决这种问题 DaoCloud 推出了「安全镜像」构建功能。
+Docker 镜像会将 Dockerfile 中每一步结果保存进其 layer，如果是从源码构建镜像的话会将代码留在镜像中。为了解决这种问题 DaoCloud 推出了「安全镜像」构建功能。
 
 安全镜像构建流程包含三个步骤：代码编译、文件提取、打包镜像。通过分离编译和打包，产生一个安全、精巧、不含源代码的生产级别镜像。
 
 ## 开始构建安全镜像
 
-我们以[DaoCloud/secure-python-sample](https://github.com/DaoCloud/secure-python-sample)这个 repo 为例，首先将该 repo fork 到自己的 github 帐号。
+我们以[ DaoCloud、secure-python-sample](https://github.com/DaoCloud/secure-python-sample) 这个 repo 为例，首先将该 repo fork 到自己的 github 帐号。
 
-然后在 DaoCloud 镜像构建中创建新的项目(找不到刚刚 fork 的 repo 的话请点击刷新 repo 按钮)。
+然后在 DaoCloud 镜像构建中创建新的项目（找不到刚刚 fork 的 repo 的话请点击刷新 repo 按钮）。
 
 点击「流程定义」可以看到下图：
 
