@@ -6,7 +6,7 @@ title: '如何制作一个定制的 Python 基础 Docker 镜像'
 
 > 目标：准备一个定制的 Python 基础镜像。基础镜像，通常为含最小功能的系统镜像，之后的应用镜像都以此为基础。
 > 
-> 本项目代码维护在 **[DaoCloud/python-sample-base-image](https://github.com/DaoCloud/python-sample-base-image)** 项目中。
+> 本项目代码维护在 **[DaoCloud、python-sample-base-image](https://github.com/DaoCloud/python-sample-base-image)** 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有脚本文件。
 
@@ -38,18 +38,18 @@ MAINTAINER Captain Dao <support@daocloud.io>
 
 ```dockerfile
 RUN apt-get update && \
-  	apt-get install -y python \
-    				   python-dev \
+      apt-get install -y python \
+                       python-dev \
                        python-pip && \
-  	rm -rf /var/lib/apt/lists/*
+      rm -rf /var/lib/apt/lists/*
 ```
 
 > *以下这个方法不建议采用，原因是比上述命令多添加了一层镜像，然而并没有降低总镜像的体积。*
 >
 >```dockerfile
 >RUN apt-get update && \
->  	apt-get install -y python \
->    				   python-dev \
+>      apt-get install -y python \
+>                       python-dev \
 >                       python-pip 
 >RUN rm -rf /var/lib/apt/lists/*
 >```
@@ -90,8 +90,8 @@ MAINTAINER Captain Dao <support@daocloud.io>
 
 # APT 自动安装 Python 相关的依赖包，如需其他依赖包在此添加
 RUN apt-get update && \
-  	apt-get install -y python \
-    				   python-dev \
+      apt-get install -y python \
+                       python-dev \
                        python-pip  \
     # 用完包管理器后安排打扫卫生可以显著的减少镜像大小
     && apt-get clean \
